@@ -1,9 +1,9 @@
 @use '@angular/material' as mat;
 @use './palettes';
 
-$my-primary: mat.define-palette(palettes.$m2-primary,700);
-$my-accent: mat.define-palette(palettes.$m2-accent,700);
-$my-warn: mat.define-palette(palettes.$m2-error,700);
+$my-primary: mat.define-palette(palettes.$m2-primary,800);
+$my-accent: mat.define-palette(palettes.$m2-accent,500);
+$my-warn: mat.define-palette(palettes.$m2-warn,900);
 
 $my-theme: mat.define-light-theme(
   (
@@ -18,5 +18,4 @@ $my-theme: mat.define-light-theme(
 );
 
 @include mat.core();
-
 @include mat.all-component-themes($my-theme);
