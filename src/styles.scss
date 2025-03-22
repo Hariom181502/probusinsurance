@@ -1,155 +1,125 @@
 html {
-    font-size: 62.5%;  /* 62.5% of 16px = 10px */
+  font-size: 62.5%;
+  /* 62.5% of 16px = 10px */
 }
 
 @media screen and (max-width: 1399px) {
-    html {
-        font-size: 58%;  /* 58% of 16px = 9.28px */
-    }
+  html {
+    font-size: 58%;
+    /* 58% of 16px = 9.28px */
+  }
 }
 
 @media screen and (max-width: 991px) {
-    html {
-        font-size: 56%; /* 56% of 16px = 8.96px */
-        scroll-behavior: smooth;
-    }
+  html {
+    font-size: 56%;
+    /* 56% of 16px = 8.96px */
+    scroll-behavior: smooth;
+  }
 }
 
 body {
-    margin: 0;
-    background-color: #edf0f2 !important;
+  margin: 0;
+  font-family: 'Inter-r';
+  font-size: 1.6rem;
 }
 
-* {
-    font-family: 'Inter-r';
-  }
-  
- 
-  // Inter font
-  @font-face {
-    font-family: 'Inter-r';
-    src: url(../src/assets/Fonts/Inter-Regular.ttf);
-  }
-  
-  @font-face {
-    font-family: 'Inter-m';
-    src: url(../src/assets/Fonts/Inter-Medium.ttf);
-  }
-  
-  @font-face {
-    font-family: 'Inter-sb';
-    src: url(../src/assets/Fonts/Inter-SemiBold.ttf);
-  }
-  
-  @font-face {
-    font-family: 'Inter-b';
-    src: url(../src/assets/Fonts/Inter-Bold.ttf);
-  }
-  
-  /* -----------------------
+
+// Inter font
+@font-face {
+  font-family: 'Inter-r';
+  src: url(../src/assets/Fonts/Inter-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Inter-m';
+  src: url(../src/assets/Fonts/Inter-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'Inter-sb';
+  src: url(../src/assets/Fonts/Inter-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: 'Inter-b';
+  src: url(../src/assets/Fonts/Inter-Bold.ttf);
+}
+
+/* -----------------------
   ---color variables---
   ----------------------- */
-  :root {
-    --primary: #0029a3;
-    --secondary: #125d60;
-    --warn: #cc3300;
+:root {
+  --primary: #0029a3;
+  --secondary: #1cb9ce;
+  --warn: #cc3300;
+}
 
-    --pending: #FFEA4D;
-    --success: #09930F;
-    --disable: #BABDC3;
-     font-family: 'Poppins-r';
-  }
-  
-  /* -----------------------
+/* -----------------------
   ---color style class---
   ----------------------- */
-  .primary {
-    color: #0029a3;
-  }
-  
-  .secondary {
-    color: #125d60;
-  }
+.primary {
+  color: var(--primary);
+}
 
-  .warn {
-    color: #cc3300;
-  }
+.secondary {
+  color: var(--secondary)
+}
 
-  .bodytext-color {
-    color: #414141;
-  }
+.warn {
+  color: var(--warn);
+}
 
-  .pending {
-    color: #FFEA4D;
-  }
-  
-  .success {
-    color: #09930F;
-  }
-  
-  .disable {
-    color: #BABDC3;
-  }
 
-  
-  /* -----------------------
+/* -----------------------
   ---Fonts Style Class---
   ----------------------- */
-  p,a,span{
-    font-size: 1.4rem;
-  }
-  
-  .heading-1, h1 {
-    font-size: 2.4rem !important;
-    font-weight: 700 !important;
-  }
-  
-  .heading-2, h2 {
-    font-size: 1.8rem !important;
-    font-weight: 700 !important;
-  }
-  
-  .subtitle-1, h3 {
-    font-size: 1.6rem !important;
-    font-weight: 700 !important;
-  }
-  
-  .subtitle-2, h4 {
-    font-size: 1.2rem !important;
-    font-weight: 700 !important;
-  }
-  
-  .f-10 {
-    font-size: 1rem;
-  }
-  .f-12 {
-    font-size: 1.2rem;
-  }
-  
-  .f-14 {
-    font-size: 1.4rem;
-  }
-  
-  .f-16 {
-    font-size: 1.6rem;
-  }
-  
-  .f-18 {
-    font-size: 1.8rem;
-  }
-  
-  .f-20 {
-    font-size: 2.0rem;
-  }
-  
-  .medium-font {
-    font-family: 'Inter-m' !important;
-  }
-  
-  .semibold-font {
-    font-family: 'Inter-sm' !important;
-  }
-  
-  .bold-font {
-    font-family: 'Inter-b' !important;
-  }
+
+.f-10 {
+  font-size: 1rem;
+}
+
+.f-12 {
+  font-size: 1.2rem;
+}
+
+.f-14 {
+  font-size: 1.4rem;
+}
+
+.f-16 {
+  font-size: 1.6rem;
+}
+
+.f-18 {
+  font-size: 1.8rem;
+}
+
+.f-20 {
+  font-size: 2.0rem;
+}
+
+.f-22{
+  font-size: 2.2rem;
+}
+
+.f-24{
+  font-size: 2.4rem;
+}
+
+.f-28{
+  font-size: 2.8rem;
+}
+
+
+.medium-font {
+  font-family: 'Inter-m' !important;
+}
+
+.semibold-font {
+  font-family: 'Inter-sm' !important;
+}
+
+.bold-font {
+  font-family: 'Inter-b' !important;
+}

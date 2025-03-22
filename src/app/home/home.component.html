@@ -1,5 +1,60 @@
-<app-header></app-header>
-
-<p class="primary heading-1">lorem Ipsum</p>
-<p class="secondary f-20 semibold-font">lorem Ipsum</p>
-<p class="warn f-20 bold-font">lorem Ipsum</p>
+<div class="homepage-container">
+    <div class="container h-100">
+        <app-header></app-header>
+        <div class="row">
+            <div class="col-6">
+                <div class="height-100 d-flex">
+                    <div class="form-card-container align-self-center w-100">
+                        <mat-card appearance="outlined" class="custom-card-outline">
+                            <mat-card-content>
+                                <div class="d-flex align-items-center gap-5 pb-3">
+                                    <div class="d-flex gap-3">
+                                        <img src="call-icon-with-primary-color.svg" alt="Phone Icon">
+                                        <div>
+                                            <span class="f-12 call-chat-text">Call to Expert</span>
+                                            <p class="semibold-font primary m-0">+91 73043 32968</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex gap-3">
+                                        <img src="whats-app-icon.svg" alt="Whats App Icon">
+                                        <div>
+                                            <span class="f-12 call-chat-text">Chat on Whatsapp</span>
+                                            <p class="semibold-font primary m-0 green-color">+91 73043 32968</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="heading-container mt-5">
+                                    <span class="f-22 medium-font">Have A</span>
+                                    <p class="m-0 f-28 bold-font primary">Vehicle Number?</p>
+                                </div>
+                                <form class="mt-2">
+                                    <div class="input-container">
+                                        <p class="f-12 m-0 mb-1">Enter Vehicle Registration Number</p>
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <input matInput placeholder="MH - 02 - CJ - 8888">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="button-container compare-quotes mt-4">
+                                        <button mat-raised-button color="primary" class="semibold-font">COMPARE QUOTES -></button>
+                                    </div>
+                                </form>
+                                <div class="link-text-container mt-5">
+                                    <p class="primary medium-font f-14 m-0 mb-1">Don't have a bike number yet?</p>
+                                    <p class="primary medium-font f-14 m-0 mb-1">Just bought a new bike?</p>
+                                    <p class="primary medium-font f-14 m-0">Probus Policy Renewal?</p>
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="d-flex height-100 justify-content-end">
+                    <div class="align-self-end">
+                        <img src="bike-insurance-vector.svg" alt="Bike Insurance Vector">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

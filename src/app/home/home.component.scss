@@ -1,0 +1,34 @@
+.homepage-container{
+    height: 100vh;
+    background-image: url(../../../public/homepage-bg.svg);
+    background-repeat: repeat-x;
+    background-position: bottom right;
+}
+
+.height-100{
+    height: calc(100vh - 63px);
+}
+
+.custom-card-outline{
+    border: 1px solid #0029a329;
+    border-radius: 10px;
+}
+
+.green-color{
+    color: #60D669;
+}
+
+::ng-deep .compare-quotes{
+    .mat-mdc-raised-button{
+        padding: 24px 36px;
+        border-radius: 10px;
+    }
+
+    .mdc-button__label{
+        font-size: 2rem !important;
+    }
+}
+
+// .form-card-container{
+//     min-width: 65%;
+// }
