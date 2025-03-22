@@ -1,2 +1,21 @@
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html {
+    font-size: 62.5%;  /* 62.5% of 16px = 10px */
+}
+
+@media screen and (max-width: 1399px) {
+    html {
+        font-size: 58%;  /* 58% of 16px = 9.28px */
+    }
+}
+
+@media screen and (max-width: 991px) {
+    html {
+        font-size: 56%; /* 56% of 16px = 8.96px */
+        scroll-behavior: smooth;
+    }
+}
+
+body {
+    margin: 0;
+    background-color: #edf0f2 !important;
+}
