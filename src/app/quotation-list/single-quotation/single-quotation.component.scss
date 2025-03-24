@@ -1,0 +1,74 @@
+.color-card-top-section {
+    background-color: #FFF7ED;
+    border-radius: 16px 16px 0px 0px;
+
+    .duration-container {
+        background-color: #F3F6FF;
+        border-radius: 16px 16px 0px 0px;
+    }
+
+    .activity-points-container {
+        color: #5D5F62;
+
+        span {
+            color: #E47900;
+        }
+    }
+}
+
+::ng-deep .mat-mdc-card {
+    box-shadow: 0px 4px 6px #5f5f5f1a !important;
+    // box-shadow: none !important;
+    border-radius: 0px 16px 16px 16px !important;
+}
+
+::ng-deep .first-row{
+    .text-label{
+        color: #6B7280;
+    }
+
+    .value-text{
+        color: #000C19;
+    }
+
+    .mat-mdc-raised-button{
+        padding: 22px 30px;
+        border-radius: 10px;
+    }
+
+    .mdc-button__label{
+        font-size: 1.7rem !important;
+        font-family: 'inter-sb';
+    }
+}
+
+::ng-deep .rotate-icon{
+    rotate: 180deg;
+    height: auto !important;
+    width: auto !important;
+    font-size: 2rem !important;
+    padding-top: 2px;
+    margin-right: 0px !important;
+}
+
+@media screen and (max-width: 767px){
+    ::ng-deep .mat-mdc-card {
+        border-radius: 0px 0px 16px 16px !important;
+    }
+}
+
+@media screen and (max-width: 576px){
+
+    ::ng-deep .first-row{
+    
+        .mat-mdc-raised-button{
+            padding: 14px;
+            border-radius: 10px;
+        }
+    
+        .mdc-button__label{
+            font-size: 1.7rem !important;
+            font-family: 'inter-sb';
+        }
+    }
+}
