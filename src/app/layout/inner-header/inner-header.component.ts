@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
 
 @Component({
   selector: 'app-inner-header',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './inner-header.component.scss'
 })
 export class InnerHeaderComponent {
-
+    
 }

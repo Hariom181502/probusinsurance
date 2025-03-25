@@ -1,0 +1,47 @@
+.vehicle-details-container{
+    background-image: url(../../../public/homepage-bg.svg);
+    background-repeat: repeat-x;
+    background-position: bottom right;
+}
+.height-100{
+    height: calc(100vh - 61px);
+}
+.custom-card-outline{
+    border: 1px solid #0029a329;
+    border-radius: 10px;
+}
+
+.green-color{
+    color: #60D669;
+}
+
+::ng-deep .compare-quotes{
+    .mat-mdc-raised-button{
+        padding: 24px 36px;
+        border-radius: 10px;
+    }
+
+    .mdc-button__label{
+        font-size: 1.6rem !important;
+        font-family: 'inter-sb';
+    }
+}
+
+::ng-deep .rotate-icon{
+    rotate: 180deg;
+    height: auto !important;
+    width: auto !important;
+    font-size: 2rem !important;
+    padding-top: 2px;
+}
+
+@media screen and (max-width: 991px){
+
+    .img-size-handler{
+        width: 70%;
+    }
+
+    .height-100{
+        height: 100%;
+    }
+}
