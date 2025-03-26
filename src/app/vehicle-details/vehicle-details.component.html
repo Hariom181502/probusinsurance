@@ -3,56 +3,64 @@
     <div class="container h-100">
         <div class="row mt-5 pt-5 mt-lg-0 gy-4 justify-content-between height-100">
 
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 col-xxl-5">
                 <div class="form-card-container w-100">
                     <mat-card appearance="outlined" class="custom-card-outline p-4">
                         <mat-card-content>
-                            <div class="d-flex align-items-center gap-5 pb-3 flex-wrap">
-                                <div class="d-flex gap-3">
-                                    <img src="call-icon-with-primary-color.svg" alt="Phone Icon">
-                                    <div>
-                                        <span class="f-12 call-chat-text">Call to Expert</span>
-                                        <p class="semibold-font primary m-0 f-16">+91 73043 32968</p>
+                            <form>
+                            <div class="form-fields-container mt-2">
+                                    <div class="input-container">
+                                        <p class="f-12 m-0 mb-1">RTO & City</p>
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <input matInput placeholder="MH-01 Mumbai">
+                                        </mat-form-field>
                                     </div>
-                                </div>
-                                <div class="d-flex gap-3">
-                                    <img src="whats-app-icon.svg" alt="Whats App Icon">
-                                    <div>
-                                        <span class="f-12 call-chat-text">Chat on Whatsapp</span>
-                                        <p class="semibold-font primary m-0 green-color f-16">+91 73043 32968</p>
+                                    <div class="date-container">
+                                        <p class="f-12 m-0 mb-1">Manufacturing Year</p>
+                                        <mat-form-field appearance="outline" class="w-100">                                           
+                                            <input matInput [matDatepicker]="manufactDatePicker" placeholder="MM/DD/YYYY" (click)="manufactDatePicker.open()">                                          
+                                            <mat-datepicker-toggle matIconSuffix [for]="manufactDatePicker"></mat-datepicker-toggle>
+                                            <mat-datepicker #manufactDatePicker></mat-datepicker>
+                                        </mat-form-field>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="heading-container mt-5">
-                                <span class="f-22 medium-font">Have A</span>
-                                <p class="m-0 f-28 bold-font primary">Vehicle Number?</p>
-                            </div>
-                            <form class="mt-2">
-                                <div class="input-container">
-                                    <p class="f-12 m-0 mb-1">Enter Vehicle Registration Number</p>
-                                    <mat-form-field appearance="outline" class="w-100">
-                                        <input matInput placeholder="MH - 02 - CJ - 8888">
-                                    </mat-form-field>
-                                </div>
-                                <div class="button-container compare-quotes mt-4">
-                                    <button mat-raised-button color="primary" class="semibold-font">COMPARE QUOTES
-                                        <mat-icon class="rotate-icon order-2 ms-3 f-18">keyboard_backspace</mat-icon>
-                                    </button>
+                                    <div class="input-container">
+                                        <p class="f-12 m-0 mb-1">Make Model</p>
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <input matInput placeholder="Hero Motorcorp Glamour">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="dropdown-container">
+                                        <p class="f-12 m-0 mb-1">Variant</p>
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <mat-label>Select</mat-label>
+                                            <mat-select disableOptionCentering>
+                                                <mat-option value="0">STD (125 CC)</mat-option>
+                                                <mat-option value="1">IBS (125 CC)</mat-option>
+                                                <mat-option value="2">Electric Start Drum Brake Cast Wheels
+                                                    (125 cc) Petrol</mat-option>
+                                                <mat-option value="3">SDD 250CC</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="date-container">
+                                        <p class="f-12 m-0 mb-1">Registration Year</p>
+                                        <mat-form-field appearance="outline" class="w-100">                                           
+                                            <input matInput [matDatepicker]="regisDatePicker" placeholder="MM/DD/YYYY" (click)="regisDatePicker.open()">                                          
+                                            <mat-datepicker-toggle matIconSuffix [for]="regisDatePicker"></mat-datepicker-toggle>
+                                            <mat-datepicker #regisDatePicker></mat-datepicker>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="button-container compare-quotes d-flex gap-5 align-items-center mt-4">
+                                        <button mat-stroked-button color="primary" class="semibold-font">
+                                            <mat-icon class="custom-arrow-icon ms-3 f-18">keyboard_backspace</mat-icon>
+                                            Back                                            
+                                        </button>
+                                        <button mat-raised-button color="primary" class="semibold-font">Proceed
+                                            <mat-icon class="custom-arrow-icon rotate-icon order-2 ms-3 f-18">keyboard_backspace</mat-icon>
+                                        </button>
+                                    </div>
                                 </div>
                             </form>
-                            <div class="link-text-container mt-5">
-                                <p class="primary medium-font f-14 m-0 mb-1"><a
-                                        class="text-reset text-decoration-none" href="javascript:void(0)">Don't have
-                                        a bike number yet?</a>
-                                </p>
-                                <p class="primary medium-font f-14 m-0 mb-1"><a
-                                        class="text-reset text-decoration-none" href="javascript:void(0)">Just
-                                        bought a new bike?</a>
-                                </p>
-                                <p class="primary medium-font f-14 m-0"><a class="text-reset text-decoration-none"
-                                        href="javascript:void(0)">Probus Policy Renewal?</a>
-                                </p>
-                            </div>
                         </mat-card-content>
                     </mat-card>
                 </div>

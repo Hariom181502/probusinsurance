@@ -7,8 +7,10 @@
     height: calc(100vh - 61px);
 }
 .custom-card-outline{
-    border: 1px solid #0029a329;
+    position: relative;
     border-radius: 10px;
+    border-color: #0000000d;
+    // .v-dtl-title
 }
 
 .green-color{
@@ -16,7 +18,7 @@
 }
 
 ::ng-deep .compare-quotes{
-    .mat-mdc-raised-button{
+    .mat-mdc-raised-button, .mat-mdc-outlined-button{
         padding: 24px 36px;
         border-radius: 10px;
     }
@@ -27,13 +29,16 @@
     }
 }
 
-::ng-deep .rotate-icon{
-    rotate: 180deg;
+::ng-deep .custom-arrow-icon {
     height: auto !important;
     width: auto !important;
     font-size: 2rem !important;
-    padding-top: 2px;
+    padding-top: 2px;  
+    &.rotate-icon {
+        rotate: 180deg;
+    }
 }
+
 
 @media screen and (max-width: 991px){
 
