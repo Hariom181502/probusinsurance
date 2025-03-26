@@ -10,6 +10,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [],
@@ -24,7 +25,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatInputModule,
     MatRadioModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule
   ],
   exports:[
     MatCardModule,
@@ -36,7 +38,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatInputModule,
     MatRadioModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule
   ]
 })
 export class MaterialModule { }

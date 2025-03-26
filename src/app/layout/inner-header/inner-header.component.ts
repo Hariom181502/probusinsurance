@@ -1,4 +1,4 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-inner-header',
@@ -8,4 +8,6 @@ import { Component, Input, input } from '@angular/core';
 })
 export class InnerHeaderComponent {
     
+  @Input() title:any;
+
 }

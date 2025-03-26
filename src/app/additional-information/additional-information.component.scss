@@ -19,7 +19,7 @@
     }
 }
 
-.vehicle-details-container {
+.additional-information-container {
     background-image: url(../../../public/homepage-bg.svg);
     background-repeat: repeat-x;
     background-position: bottom right;
@@ -36,8 +36,8 @@
     position: relative;
     border-radius: 10px;
     border-color: #0000000d;
-    &.vehicle-dtl-card::before {
-        @include card-title-style("Vehicle Details", "left");
+    &.policy-dtl-card::before {
+        @include card-title-style("Additional Information", "left");
     }
     &.why-choose-card::before {
         @include card-title-style("Why Choose Probus?", "right");
@@ -69,7 +69,16 @@
     }
 }
 
-
+::ng-deep .mdc-checkbox__background {
+    width: 22px !important;
+    height: 22px !important;
+    border: 1px solid currentColor !important;
+    border-color: #CFD3D4 !important;
+    border-radius: 7px !important;
+}
+.checkbox-container{
+    color: #83898C;
+}
 // Media Query
 @media screen and (max-width: 991px) {
     .height-100 {
