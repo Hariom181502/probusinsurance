@@ -1,4 +1,9 @@
-.color-bg-container{
+.color-bg-container {
     background-color: #F3FAFB;
     min-height: calc(100vh - 61px);
+}
+
+.mat-mdc-card {
+    box-shadow: 0px 4px 6px #5f5f5f1a !important;
+    border-radius: 10px !important;
 }

@@ -123,3 +123,16 @@ body {
 .bold-font {
   font-family: 'Inter-b' !important;
 }
+
+// ----------------------------------
+// -----------Button Style-----------
+// ----------------------------------
+
+.btn-primary-border {
+  --mdc-outlined-button-outline-color: var(--primary) !important;
+}
+
+
+.cursor-pointer{
+  cursor: pointer;
+}
