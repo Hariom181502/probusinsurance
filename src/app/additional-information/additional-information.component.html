@@ -1,43 +1,37 @@
-<app-inner-header [title]="logoTitle"></app-inner-header>
-<div class="vehicle-details-container">
+<app-inner-header [title]="logoTile"></app-inner-header>
+<div class="additional-information-container">
     <div class="container h-100">
         <div class="row mt-5 mt-lg-0 gy-4 justify-content-between height-100">
 
-            <div class="col-md-6 col-lg-5">
+            <div class="col-md-7 col-lg-6">
                 <div class="form-card-container w-100">
-                    <mat-card appearance="outlined" class="custom-card-outline vehicle-dtl-card p-4">
+                    <mat-card appearance="outlined" class="custom-card-outline policy-dtl-card p-4">
                         <mat-card-content>
-                            <form [formGroup]="vehicleDtlForm">
+                            <form [formGroup]="additionalInfoForm">
                             <div class="form-fields-container mt-2">
-                                    <div class="input-container">
-                                        <p class="f-12 m-0 mb-1">RTO & City</p>
-                                        <mat-form-field appearance="outline" class="w-100">
-                                            <input matInput placeholder="MH-01 Mumbai" formControlName="rtoCity">
-                                        </mat-form-field>
-                                    </div>
-                                    @if (vehicleDtlForm.get('rtoCity')?.valid) {
                                     <div class="date-container">
                                         <p class="f-12 m-0 mb-1">Manufacturing Year</p>
                                         <mat-form-field appearance="outline" class="w-100">                                           
-                                            <input matInput [matDatepicker]="manufactDatePicker" placeholder="MM/DD/YYYY" (click)="manufactDatePicker.open()" formControlName="manufacturingYear">                                          
+                                            <input matInput [matDatepicker]="manufactDatePicker" placeholder="MM/DD/YYYY" (click)="manufactDatePicker.open()" formControlName="manufactYear">                                          
                                             <mat-datepicker-toggle matIconSuffix [for]="manufactDatePicker"></mat-datepicker-toggle>
                                             <mat-datepicker #manufactDatePicker></mat-datepicker>
                                         </mat-form-field>
                                     </div>
-                                    }
-                                    @if (vehicleDtlForm.get('manufacturingYear')?.valid) {
-                                    <div class="input-container">
-                                        <p class="f-12 m-0 mb-1">Make Model</p>
-                                        <mat-form-field appearance="outline" class="w-100">
-                                            <input matInput placeholder="Hero Motorcorp Glamour" formControlName="makeModel">
+                                    @if (additionalInfoForm.get('manufactYear')?.valid) {
+                                    <div class="purchase-date-container">
+                                        <p class="f-12 m-0 mb-1">Purchase Date</p>
+                                        <mat-form-field appearance="outline" class="w-100">                                           
+                                            <input matInput [matDatepicker]="purchaseDatePicker" placeholder="MM/DD/YYYY" (click)="purchaseDatePicker.open()" formControlName="purchaseDate">                                          
+                                            <mat-datepicker-toggle matIconSuffix [for]="purchaseDatePicker"></mat-datepicker-toggle>
+                                            <mat-datepicker #purchaseDatePicker></mat-datepicker>
                                         </mat-form-field>
                                     </div>
-                                     }
-                                     @if (vehicleDtlForm.get('makeModel')?.valid) {
+                                    }
+                                    @if (additionalInfoForm.get('purchaseDate')?.valid) {
                                     <div class="dropdown-container">
-                                        <p class="f-12 m-0 mb-1">Variant</p>
+                                        <p class="f-12 m-0 mb-1">Policy Term</p>
                                         <mat-form-field appearance="outline" class="w-100">
-                                            <mat-select disableOptionCentering placeholder="Select Variant" formControlName="variant">
+                                            <mat-select disableOptionCentering placeholder="Select Policy Term" formControlName="policyTerm">
                                                 <mat-option value="0">STD (125 CC)</mat-option>
                                                 <mat-option value="1">IBS (125 CC)</mat-option>
                                                 <mat-option value="2">Electric Start Drum Brake Cast Wheels
@@ -47,22 +41,51 @@
                                         </mat-form-field>
                                     </div>
                                    }
-                                   @if (vehicleDtlForm.get('variant')?.valid) {
-                                    <div class="date-container">
-                                        <p class="f-12 m-0 mb-1">Registration Year</p>
-                                        <mat-form-field appearance="outline" class="w-100">                                           
-                                            <input matInput [matDatepicker]="regisDatePicker" placeholder="MM/DD/YYYY" (click)="regisDatePicker.open()" formControlName="registrationYear">                                          
-                                            <mat-datepicker-toggle matIconSuffix [for]="regisDatePicker"></mat-datepicker-toggle>
-                                            <mat-datepicker #regisDatePicker></mat-datepicker>
-                                        </mat-form-field>
+                                   @if (additionalInfoForm.get('policyTerm')?.valid) {
+                                    <div class="checkbox-container">
+                                        <p class="f-12 m-0 mb-1">Customer Type</p>
+                                        <div class="policy-types-container d-flex align-items-center gap-3 flex-wrap">
+                                            @for (el of customerTypeDtl; track $index) {
+                                            <div class="policy-types d-flex align-items-center gap-3">
+                                                <mat-checkbox color="primary" formControlName="customerType"></mat-checkbox>
+                                                <p class="medium-font f-14 m-0 mt-2">{{el.title}}</p>
+                                            </div>
+                                        }
+                                        </div>
+                                    </div>
+                                   }
+                                   @if (additionalInfoForm.get('customerType')?.valid) {
+                                    <div class="checkbox-container my-5">
+                                        <p class="f-12 m-0 mb-1">Do you have a valid driving license?</p>
+                                        <div class="policy-types-container d-flex align-items-center gap-3 flex-wrap">
+                                            @for (el of licenceDtl; track $index) {
+                                            <div class="policy-types d-flex align-items-center gap-3">
+                                                <mat-checkbox color="primary" formControlName="drivingLicense"></mat-checkbox>
+                                                <p class="medium-font f-14 m-0 mt-2">{{el.title}}</p>
+                                            </div>
+                                        }
+                                        </div>
+                                    </div>
+                                   }
+                                   @if (additionalInfoForm.get('drivingLicense')?.valid) {
+                                    <div class="checkbox-container">
+                                        <p class="f-12 m-0 mb-1">Do you already have Personal Accidental (PA) Cover of Rs. 15 Lakh?</p>
+                                        <div class="policy-types-container d-flex align-items-center gap-3 flex-wrap">
+                                            @for (el of personalAcceDtl; track $index) {
+                                            <div class="policy-types d-flex align-items-center gap-3">
+                                                <mat-checkbox color="primary" formControlName="personalAccident"></mat-checkbox>
+                                                <p class="medium-font f-14 m-0 mt-2">{{el.title}}</p>
+                                            </div>
+                                        }
+                                        </div>
                                     </div>
                                 }
-                                    <div class="button-container compare-quotes d-flex gap-5 align-items-center mt-4">
+                                    <div class="button-container compare-quotes d-flex gap-5 align-items-center mt-5">
                                         <button mat-stroked-button color="primary" class="semibold-font">
                                             <mat-icon class="custom-arrow-icon f-18">keyboard_backspace</mat-icon>
                                             Back                                            
                                         </button>
-                                        <button [disabled]="vehicleDtlForm.invalid" mat-raised-button color="primary" class="semibold-font" (click)="getPolicyDtl()">Proceed
+                                        <button [disabled]="additionalInfoForm.invalid" mat-raised-button color="primary" class="semibold-font" (click)="getQuotation()">Proceed
                                             <mat-icon class="custom-arrow-icon rotate-icon order-2 ms-3 f-18">keyboard_backspace</mat-icon>
                                         </button>
                                     </div>
@@ -73,7 +96,7 @@
                 </div>
             </div>
 
-            <div class="col-md-6 col-lg-5 col-xxl-4">
+            <div class="col-md-5 col-lg-4">
                 <div class="d-flex flex-column justify-content-between align-items-end h-100">
                     <div class="form-card-container w-100 d-none d-md-block">
                         <mat-card appearance="outlined" class="custom-card-outline why-choose-card p-4 pe-2">

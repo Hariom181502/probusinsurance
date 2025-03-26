@@ -10,5 +10,6 @@ import { MaterialModule } from '../shared/module/material/material.module';
   styleUrl: './quotation-list.component.scss'
 })
 export class QuotationListComponent {
-
+  
+  logoTitle:any='Quotation Page';
 }

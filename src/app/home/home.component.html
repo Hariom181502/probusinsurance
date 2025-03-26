@@ -27,18 +27,18 @@
                                     <span class="f-22 medium-font">Have A</span>
                                     <p class="m-0 f-28 bold-font primary">Vehicle Number?</p>
                                 </div>
-                                <form class="mt-2">
+                                <form [formGroup]="regForm" class="mt-2">
                                     <div class="input-container">
                                         <p class="f-12 m-0 mb-1">Enter Vehicle Registration Number</p>
                                         <mat-form-field appearance="outline" class="w-100">
-                                            <input matInput placeholder="MH - 02 - CJ - 8888">
+                                            <input matInput placeholder="MH - 02 - CJ - 8888" formControlName="regNum">
                                         </mat-form-field>
                                     </div>
                                     <div class="button-container compare-quotes mt-4">
-                                        <button mat-raised-button color="primary" class="semibold-font">COMPARE QUOTES
+                                        <button [disabled]="regForm.invalid" mat-raised-button color="primary" class="semibold-font" (click)="getVehicelDtl()">COMPARE QUOTES
                                             <mat-icon class="rotate-icon order-2 ms-3 f-18">keyboard_backspace</mat-icon>
-                                        </button>
-                                    </div>
+                                        </button> 
+                                    </div> 
                                 </form>
                                 <div class="link-text-container mt-5">
                                     <p class="primary medium-font f-14 m-0 mb-1"><a
