@@ -73,18 +73,30 @@
 }
 
 
-.best-seller-content-container{
+.best-seller-content-container {
     position: relative;
-//     span{
-//         position: absolute;
-//         left: -20px;
-//         top: -14px;
-//         background-color: #F89A25;
-//         display: inline-block;
-//         color: black;
-//         font-size: 0.8rem;
-//         padding: 1px 10px;
-//         border-radius: 8px 0px;
-//         transform: rotate(270deg);
-// }
+    .best-seller-content {
+        position: absolute;
+        left: -34px;
+        top: -14px;
+        background-color: var(--primary);
+        font-size: 0.8rem;
+        padding: 14px 12px;
+        clip-path: polygon(19% 67%, 83% 67%, 100% 100%, 0% 100%);
+        transform: rotate(-46deg);
+        .seller-text {
+            position: relative;
+            top: 11px;
+            font-size: 1rem;
+            right: 6px;
+        }
+        .start-icon {
+            position: relative;
+            transform: scale(0.5);
+            top: 9px;
+            left: 6px;
+            color: yellow;
+
+        }
+    }
 }
