@@ -3,7 +3,7 @@
     <div class="container pt-4">
         <mat-card>
             <mat-card-content>
-                <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-between align-items-center flex-wrap">
                     <div class="vehicle-summury-container">
                         <div class="d-flex gap-5 align-items-end">
                             <div>
@@ -18,21 +18,56 @@
                         <p class="m-0 medium-font opacity-75 f-12">PIBLMTRTW2025022012540788123</p>
                     </div>
                     <div>
-                        <div class="btns-container d-flex gap-3">
+                        <div class="btns-container quotation-btns-container d-flex gap-3 flex-wrap align-items-center">
                             <button mat-stroked-button color="primary" class="btn-primary-border bold-font">
                                 <img src="icon_target.svg" alt="Target"> Know My Current Contest
                             </button>
                             <button mat-stroked-button color="primary" class="btn-primary-border bold-font">
                                 <img src="icon_info.svg" alt="Target"> Raise query
                             </button>
+                            <button mat-raised-button color="primary" class="btn-primary-border bold-font pos-rel">
+                                <img src="icon_add_fill.svg" alt="Target"> Compare
+                                <span>only in Probus</span>
+                            </button>
                         </div>
                     </div>
                 </div>
             </mat-card-content>
         </mat-card>
-        <div class="row">
-            <div class="col-12 col-md-3"></div>
-            <div class="col-12 col-md-9">
+        <div class="row mt-2 gy-4 align-items-center">
+            <div class="col-12 col-md-4 col-lg-3">
+                <div class="d-flex gap-3 align-items-center">
+                    <p class="medium-font opacity-75 m-0 f-14">Share Quotes By :</p>
+                    <img src="links.svg" alt="Links icon">
+                    <img src="mail.svg" alt="Mail icon">
+                    <img src="whatsapp.svg" alt="Mail icon">
+                </div>
+            </div>
+            <div class="col-12 col-md-8 col-lg-9">
+                <mat-card class="check-select-container">
+                    <mat-card-content>
+                        <div class="d-flex gap-4 align-items-center flex-wrap">
+                            <mat-checkbox class="opacity-75 f-14" color="primary">I need a mandatory PA Owner Driver Cover</mat-checkbox>
+                            <mat-checkbox class="opacity-75 f-14" color="primary">Show Activity Points</mat-checkbox>
+                            <mat-checkbox class="opacity-75 f-14" color="primary">Unlimited Claims</mat-checkbox>
+                            <mat-form-field appearance="outline">
+                                <mat-select  placeholder="Sort: Best Match">
+                                    <mat-option value="volvo">Volvo</mat-option>
+                                    <mat-option value="saab">Saab</mat-option>
+                                    <mat-option value="mercedes">Mercedes</mat-option>
+                                    <mat-option value="audi">Audi</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+        <div class="row mt-2 gy-4">
+            <div class="col-12 col-md-4 col-lg-3">
+                <app-quotation-filter></app-quotation-filter>
+            </div>
+            <div class="col-12 col-md-8 col-lg-9">
                 <app-single-quotation></app-single-quotation>
             </div>
         </div>

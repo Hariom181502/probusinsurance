@@ -1,0 +1,54 @@
+.header-container{
+    background-color: rgba(8, 70, 131, 0.021);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 1rem 1rem 0rem 0rem;
+}
+
+::ng-deep .filter-quotation-container{
+    .mat-expansion-panel{
+        box-shadow: none !important;
+        border: 1px solid #E5E7EB;
+    }
+
+    .mat-expansion-panel-header{
+        .mat-expansion-panel-header-title{
+            font-size: 1.6rem;
+            font-family: 'Inter-sb';
+            color: var(--primary);
+        }
+
+        .mat-expansion-indicator::after{
+            color: var(--primary);
+        }
+    }
+
+    .mat-mdc-radio-button .mdc-radio{
+        padding: 10px 10px 10px 0px;
+    }
+
+    .mat-mdc-radio-button .mat-internal-form-field{
+        color: #7C7C7C !important;
+    }
+
+    .mat-mdc-radio-checked{
+        .mdc-radio__background{
+            .mdc-radio__outer-circle{
+                border: 6px solid var(--primary);
+            }
+            .mdc-radio__inner-circle{
+                border: 0px solid rgba(255, 0, 0, 0);
+            }
+        }
+    }
+
+    .mat-mdc-form-field-subscript-wrapper{
+        display: none;
+    }
+
+    .mat-mdc-form-field-infix{
+        min-height: 0px;
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+    }
+
+}
