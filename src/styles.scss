@@ -142,6 +142,9 @@ body {
   cursor: pointer;
 }
 .mat-mdc-checkbox {
+  .mdc-checkbox__native-control:focus+.mdc-checkbox__ripple , .mdc-checkbox:hover>.mdc-checkbox__ripple {
+    background-color: transparent !important;
+}
   .mdc-checkbox__background {
       width: 22px !important;
       height: 22px !important;
