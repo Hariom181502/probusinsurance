@@ -5,4 +5,37 @@
     li:hover{
         color: var(--secondary);
     }
+    .material-icons {
+        font-size: 2rem;
+    }
+   ::ng-deep .mat-icon{
+        height: 15px;
+        width: 14px;
+    }
+    
+    
+}
+.user-container{
+    .user-name{
+        color: #6a6a6a;
+    }
+    .user-role{
+        color: #B6B6B6;
+    }
+.user-img-container {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.user-role-dropdown-container{
+    width: 10px;
+    height: 10px;
+    border: 1px solid #6A6A6A;
+    border-radius: 50%;
+    object-fit: cover;
+    img{
+        width: 7px;
+    }
+}
 }

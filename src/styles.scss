@@ -1,20 +1,15 @@
-html {
-  font-size: 62.5%;
-  /* 62.5% of 16px = 10px */
+html{
+  font-size: 62.5%;  // 62.5% of 16px = 10px 
+  scroll-behavior: smooth;
 }
-
-@media screen and (max-width: 1399px) {
-  html {
-    font-size: 58%;
-    /* 58% of 16px = 9.28px */
+@media screen and (max-width: 1399px){
+  html{
+    font-size: 58%; // 58% of 16px = 9.28px
   }
 }
-
-@media screen and (max-width: 991px) {
-  html {
-    font-size: 56%;
-    /* 56% of 16px = 8.96px */
-    scroll-behavior: smooth;
+@media screen and (max-width: 991px){
+  html{
+    font-size: 56%; // 56% of 16px = 8.96px 
   }
 }
 
@@ -162,4 +157,44 @@ body {
           width: 66%;
       }
   }
+}
+
+// Form Fields
+.mat-mdc-form-field {
+  --field-border-radius: 10px;
+  --field-outline-color: #CFD3D4;
+  --field-placeholder-color: rgba(61, 61, 61,.2);
+  --field-selected-color: #3D3D3D;
+  --field-focused-color: #5E6366;
+
+  --mdc-outlined-text-field-container-shape: var(--field-border-radius);
+  --mdc-outlined-text-field-outline-color: var(--field-outline-color);
+  --mdc-outlined-text-field-outline-width: 1.5px;
+  --mdc-outlined-text-field-focus-outline-width: 1.5px;
+  --mdc-outlined-text-field-hover-outline-color: var(--field-outline-color);
+  --mdc-outlined-text-field-focus-outline-color: var(--field-focused-color);
+
+  .mat-mdc-form-field-subscript-wrapper {
+    display: none !important;
+  }
+  .mat-mdc-select-value-text,
+  .mat-mdc-floating-label,
+  .mat-mdc-text-field .mdc-text-field__input{
+    color: var(--field-selected-color) !important;
+  }
+  .mat-mdc-input-element::placeholder,
+  .mat-mdc-select-placeholder{
+    color: var( --field-placeholder-color ) !important;
+  }
+  .mdc-line-ripple,
+  .mdc-line-ripple--deactivating {
+    display: none;
+  }
+  .mat-mdc-select-arrow {
+    // display: none;
+  }
+}
+.mdc-button.mdc-button--raised{
+--mdc-protected-button-disabled-container-color: #8C8C8C;
+--mdc-protected-button-disabled-label-text-color: #ffffff;
 }

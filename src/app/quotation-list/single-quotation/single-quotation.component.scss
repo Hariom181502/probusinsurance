@@ -77,18 +77,18 @@
     position: relative;
     .best-seller-content {
         position: absolute;
-        left: -34px;
-        top: -14px;
-        background-color: var(--primary);
-        font-size: 0.8rem;
-        padding: 14px 12px;
-        clip-path: polygon(19% 67%, 83% 67%, 100% 100%, 0% 100%);
-        transform: rotate(-46deg);
+        left: -32px;
+    top: -13px;
+    background-color: var(--primary);
+    font-size: 0.8rem;
+    padding: 13px 10px;
+    clip-path: polygon(20% 67%, 82% 67%, 100% 98%, 1% 96%);
+    transform: rotate(-46deg);
         .seller-text {
             position: relative;
-            top: 11px;
+            top: 10px;
             font-size: 1rem;
-            right: 6px;
+            right: 7px;
         }
         .start-icon {
             position: relative;
