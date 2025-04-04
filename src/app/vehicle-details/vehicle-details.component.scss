@@ -17,10 +17,12 @@
         left: -1px;
     }
 }
+.vehicle-app-container{
+    background-color: #F3FAFB;
+}
 
 ::ng-deep .vehicle-details-container {
     background-image: url(../../../public/vehicle-details/commom-bg.png);
-    background-color: #F3FAFB;
     background-repeat: no-repeat;
     background-position: bottom;
     position: relative;
@@ -64,6 +66,10 @@
     }
 }
 
+.bike-insuarnce-img-container{
+    max-width: 360px;
+}
+
 // Media Query
 @media screen and (max-width: 1399px) {
     .vehicle-details-container{
@@ -90,6 +96,11 @@
         padding-top: 5rem;
     }
 }
+}
+@media screen and (max-width:575px) {
+    .bike-insuarnce-img-container{
+        max-width: 300px;
+    }
 }
 
 @media screen and (max-width: 420px) {

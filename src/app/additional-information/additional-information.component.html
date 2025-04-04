@@ -1,138 +1,157 @@
-<app-inner-header [title]="logoTile"></app-inner-header>
-<div class="additional-information-container">
-    <div class="container h-100">
-        <div class="row mt-5 mt-lg-0 gy-4 justify-content-between height-100">
+<div class="additional-app-container">
+    <app-inner-header [title]="logoTile"></app-inner-header>
+    <div class="additional-information-container">
+        <div class="container h-100">
+            <div class="row mt-5 mt-lg-0 gy-4 justify-content-between height-100">
 
-            <div class="col-md-7 col-lg-6">
-                <div class="form-card-container w-100">
-                    <mat-card appearance="outlined" class="custom-card-outline policy-dtl-card px-3">
-                        <mat-card-content>
-                            <form [formGroup]="additionalInfoForm">
-                            <div class="form-fields-container row gy-4">
-                                    <div class="date-container">
-                                        <p class="f-12 m-0 mb-1">Manufacturing Year</p>
-                                        <mat-form-field appearance="outline" class="w-100">                                           
-                                            <input matInput [matDatepicker]="manufactDatePicker" placeholder="MM/DD/YYYY" (click)="manufactDatePicker.open()" formControlName="manufactYear">                                          
-                                            <mat-datepicker-toggle matIconSuffix [for]="manufactDatePicker"></mat-datepicker-toggle>
-                                            <mat-datepicker #manufactDatePicker></mat-datepicker>
-                                        </mat-form-field>
-                                    </div>
-                                    @if (additionalInfoForm.get('manufactYear')?.valid) {
-                                    <div class="purchase-date-container">
-                                        <p class="f-12 m-0 mb-1">Purchase Date</p>
-                                        <mat-form-field appearance="outline" class="w-100">                                           
-                                            <input matInput [matDatepicker]="purchaseDatePicker" placeholder="MM/DD/YYYY" (click)="purchaseDatePicker.open()" formControlName="purchaseDate">                                          
-                                            <mat-datepicker-toggle matIconSuffix [for]="purchaseDatePicker"></mat-datepicker-toggle>
-                                            <mat-datepicker #purchaseDatePicker></mat-datepicker>
-                                        </mat-form-field>
-                                    </div>
-                                    }
-                                    @if (additionalInfoForm.get('purchaseDate')?.valid) {
-                                    <div class="dropdown-container">
-                                        <p class="f-12 m-0 mb-1">Policy Term</p>
-                                        <mat-form-field appearance="outline" class="w-100">
-                                            <mat-select disableOptionCentering placeholder="Select Policy Term" formControlName="policyTerm">
-                                                <mat-option value="0">STD (125 CC)</mat-option>
-                                                <mat-option value="1">IBS (125 CC)</mat-option>
-                                                <mat-option value="2">Electric Start Drum Brake Cast Wheels
-                                                    (125 cc) Petrol</mat-option>
-                                                <mat-option value="3">SDD 250CC</mat-option>
-                                            </mat-select>
-                                        </mat-form-field>
-                                    </div>
-                                   }
-                                   @if (additionalInfoForm.get('policyTerm')?.valid) {
-                                    <div class="checkbox-container">
-                                        <p class="f-12 m-0 mb-1">Customer Type</p>
-                                        <div class="policy-types-container d-flex align-items-center gap-3 flex-wrap">
-                                            @for (el of customerTypeDtl; track $index) {
-                                            <div class="policy-types d-flex align-items-center gap-3">
-                                                <mat-checkbox color="primary" formControlName="customerType"></mat-checkbox>
-                                                <p class="medium-font f-14 m-0 mt-2">{{el.title}}</p>
-                                            </div>
-                                        }
-                                        </div>
-                                    </div>
-                                   }
-                                   @if (additionalInfoForm.get('customerType')?.valid) {
-                                    <div class="checkbox-container my-5">
-                                        <p class="f-12 m-0 mb-1">Do you have a valid driving license?</p>
-                                        <div class="policy-types-container d-flex align-items-center gap-3 flex-wrap">
-                                            @for (el of licenceDtl; track $index) {
-                                            <div class="policy-types d-flex align-items-center gap-3">
-                                                <mat-checkbox color="primary" formControlName="drivingLicense"></mat-checkbox>
-                                                <p class="medium-font f-14 m-0 mt-2">{{el.title}}</p>
-                                            </div>
-                                        }
-                                        </div>
-                                    </div>
-                                   }
-                                   @if (additionalInfoForm.get('drivingLicense')?.valid) {
-                                    <div class="checkbox-container">
-                                        <p class="f-12 m-0 mb-1">Do you already have Personal Accidental (PA) Cover of Rs. 15 Lakh?</p>
-                                        <div class="policy-types-container d-flex align-items-center gap-3 flex-wrap">
-                                            @for (el of personalAcceDtl; track $index) {
-                                            <div class="policy-types d-flex align-items-center gap-3">
-                                                <mat-checkbox color="primary" formControlName="personalAccident"></mat-checkbox>
-                                                <p class="medium-font f-14 m-0 mt-2">{{el.title}}</p>
-                                            </div>
-                                        }
-                                        </div>
-                                    </div>
-                                }
-                                    <div class="button-container compare-quotes d-flex gap-5 align-items-center mt-5">
-                                        <button mat-stroked-button color="primary" class="semibold-font">
-                                            <mat-icon class="custom-arrow-icon f-18">keyboard_backspace</mat-icon>
-                                            Back                                            
-                                        </button>
-                                        <button [disabled]="additionalInfoForm.invalid" mat-raised-button color="primary" class="semibold-font" (click)="getQuotation()">Proceed
-                                            <mat-icon class="custom-arrow-icon rotate-icon order-2 ms-3 f-18">keyboard_backspace</mat-icon>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </mat-card-content>
-                    </mat-card>
-                </div>
-            </div>
-
-            <div class="col-md-5 col-lg-4">
-                <div class="d-flex flex-column justify-content-between align-items-end h-100">
-                    <div class="form-card-container w-100 d-none d-md-block">
-                        <mat-card appearance="outlined" class="custom-card-outline why-choose-card p-4 pe-2">
+                <div class="col-md-7 col-lg-6">
+                    <div class="form-card-container w-100">
+                        <mat-card appearance="outlined" class="custom-card-outline policy-dtl-card px-3">
                             <mat-card-content>
-                               <div class="why-choose-probus-content-container d-flex flex-column gap-5">
-                                  <div class="inner-details d-flex align-items-center gap-4">
-                                    <img src="vehicle-details/claim_assistance.svg" alt="claim-assistance">
-                                    <p class="m-0 semibold-font f-18">Claim Assistance Anytime, Anywhere.</p>
-                                  </div>
-                                  <div class="inner-details d-flex align-items-center gap-4">
-                                    <img src="vehicle-details/compare.svg" alt="compare">
-                                    <p class="m-0 semibold-font f-18">Compare and Choose the Best Plan.</p>
-                                  </div>
-                                  <div class="inner-details d-flex align-items-center gap-4">
-                                    <img src="vehicle-details/help-desk.svg" alt="help-desk">
-                                    <p class="m-0 semibold-font f-18">24/7 Support Helpline.</p>
-                                  </div>
-                                  <div class="inner-details d-flex align-items-center gap-4">
-                                    <img src="vehicle-details/policy-insurance.svg" alt="policy-insurance">
-                                    <p class="m-0 semibold-font f-18">Instant Policy Issuance.</p>
-                                  </div>
-                                  <div class="inner-details d-flex align-items-center gap-4">
-                                    <img src="vehicle-details/endorse-process.svg" alt="endorse-process">
-                                    <p class="m-0 semibold-font f-18">Seamless Endorsement Process.</p>
-                                  </div>
-                               </div>
+                                <form [formGroup]="additionalInfoForm">
+                                    <div class="form-fields-container row gy-4">
+                                        <div class="date-container">
+                                            <p class="f-12 m-0 mb-1">Manufacturing Year</p>
+                                            <mat-form-field appearance="outline" class="w-100">
+                                                <input matInput [matDatepicker]="manufactDatePicker"
+                                                    placeholder="MM/DD/YYYY" (click)="manufactDatePicker.open()"
+                                                    formControlName="manufactYear">
+                                                <mat-datepicker-toggle matIconSuffix
+                                                    [for]="manufactDatePicker"></mat-datepicker-toggle>
+                                                <mat-datepicker #manufactDatePicker></mat-datepicker>
+                                            </mat-form-field>
+                                        </div>
+                                        @if (additionalInfoForm.get('manufactYear')?.valid) {
+                                        <div class="purchase-date-container">
+                                            <p class="f-12 m-0 mb-1">Purchase Date</p>
+                                            <mat-form-field appearance="outline" class="w-100">
+                                                <input matInput [matDatepicker]="purchaseDatePicker"
+                                                    placeholder="MM/DD/YYYY" (click)="purchaseDatePicker.open()"
+                                                    formControlName="purchaseDate">
+                                                <mat-datepicker-toggle matIconSuffix
+                                                    [for]="purchaseDatePicker"></mat-datepicker-toggle>
+                                                <mat-datepicker #purchaseDatePicker></mat-datepicker>
+                                            </mat-form-field>
+                                        </div>
+                                        }
+                                        @if (additionalInfoForm.get('purchaseDate')?.valid) {
+                                        <div class="dropdown-container">
+                                            <p class="f-12 m-0 mb-1">Policy Term</p>
+                                            <mat-form-field appearance="outline" class="w-100">
+                                                <mat-select disableOptionCentering placeholder="Select Policy Term"
+                                                    formControlName="policyTerm">
+                                                    <mat-option value="0">STD (125 CC)</mat-option>
+                                                    <mat-option value="1">IBS (125 CC)</mat-option>
+                                                    <mat-option value="2">Electric Start Drum Brake Cast Wheels
+                                                        (125 cc) Petrol</mat-option>
+                                                    <mat-option value="3">SDD 250CC</mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </div>
+                                        }
+                                        @if (additionalInfoForm.get('policyTerm')?.valid) {
+                                        <div class="checkbox-container">
+                                            <p class="f-12 m-0 mb-1">Customer Type</p>
+                                            <div
+                                                class="policy-types-container d-flex align-items-center gap-3 flex-wrap">
+                                                @for (el of customerTypeDtl; track $index) {
+                                                <div class="policy-types d-flex align-items-center gap-3">
+                                                    <mat-checkbox color="primary"
+                                                        formControlName="customerType"></mat-checkbox>
+                                                    <p class="medium-font f-14 m-0 mt-2">{{el.title}}</p>
+                                                </div>
+                                                }
+                                            </div>
+                                        </div>
+                                        }
+                                        @if (additionalInfoForm.get('customerType')?.valid) {
+                                        <div class="checkbox-container my-5">
+                                            <p class="f-12 m-0 mb-1">Do you have a valid driving license?</p>
+                                            <div
+                                                class="policy-types-container d-flex align-items-center gap-3 flex-wrap">
+                                                @for (el of licenceDtl; track $index) {
+                                                <div class="policy-types d-flex align-items-center gap-3">
+                                                    <mat-checkbox color="primary"
+                                                        formControlName="drivingLicense"></mat-checkbox>
+                                                    <p class="medium-font f-14 m-0 mt-2">{{el.title}}</p>
+                                                </div>
+                                                }
+                                            </div>
+                                        </div>
+                                        }
+                                        @if (additionalInfoForm.get('drivingLicense')?.valid) {
+                                        <div class="checkbox-container">
+                                            <p class="f-12 m-0 mb-1">Do you already have Personal Accidental (PA) Cover
+                                                of Rs. 15 Lakh?</p>
+                                            <div
+                                                class="policy-types-container d-flex align-items-center gap-3 flex-wrap">
+                                                @for (el of personalAcceDtl; track $index) {
+                                                <div class="policy-types d-flex align-items-center gap-3">
+                                                    <mat-checkbox color="primary"
+                                                        formControlName="personalAccident"></mat-checkbox>
+                                                    <p class="medium-font f-14 m-0 mt-2">{{el.title}}</p>
+                                                </div>
+                                                }
+                                            </div>
+                                        </div>
+                                        }
+                                        <div
+                                            class="button-container compare-quotes d-flex gap-5 align-items-center mt-5">
+                                            <button mat-stroked-button color="primary" class="semibold-font">
+                                                <mat-icon class="custom-arrow-icon f-18">keyboard_backspace</mat-icon>
+                                                Back
+                                            </button>
+                                            <button [disabled]="additionalInfoForm.invalid" mat-raised-button
+                                                color="primary" class="semibold-font" (click)="getQuotation()">Proceed
+                                                <mat-icon
+                                                    class="custom-arrow-icon rotate-icon order-2 ms-3 f-18">keyboard_backspace</mat-icon>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
                             </mat-card-content>
                         </mat-card>
                     </div>
-                    <div class="text-end">
-                        <img class="img-fluid" src="vehicle-details/bike-insurance.gif" alt="bike-insurance">
-                    </div>
                 </div>
-               
+
+                <div class="col-md-5 col-lg-4">
+                    <div class="d-flex flex-column justify-content-between align-items-end h-100">
+                        <div class="form-card-container w-100 d-none d-md-block">
+                            <mat-card appearance="outlined" class="custom-card-outline why-choose-card p-4 pe-2">
+                                <mat-card-content>
+                                    <div class="why-choose-probus-content-container d-flex flex-column gap-5">
+                                        <div class="inner-details d-flex align-items-center gap-4">
+                                            <img src="vehicle-details/claim_assistance.svg" alt="claim-assistance">
+                                            <p class="m-0 semibold-font f-18">Claim Assistance Anytime, Anywhere.</p>
+                                        </div>
+                                        <div class="inner-details d-flex align-items-center gap-4">
+                                            <img src="vehicle-details/compare.svg" alt="compare">
+                                            <p class="m-0 semibold-font f-18">Compare and Choose the Best Plan.</p>
+                                        </div>
+                                        <div class="inner-details d-flex align-items-center gap-4">
+                                            <img src="vehicle-details/help-desk.svg" alt="help-desk">
+                                            <p class="m-0 semibold-font f-18">24/7 Support Helpline.</p>
+                                        </div>
+                                        <div class="inner-details d-flex align-items-center gap-4">
+                                            <img src="vehicle-details/policy-insurance.svg" alt="policy-insurance">
+                                            <p class="m-0 semibold-font f-18">Instant Policy Issuance.</p>
+                                        </div>
+                                        <div class="inner-details d-flex align-items-center gap-4">
+                                            <img src="vehicle-details/endorse-process.svg" alt="endorse-process">
+                                            <p class="m-0 semibold-font f-18">Seamless Endorsement Process.</p>
+                                        </div>
+                                    </div>
+                                </mat-card-content>
+                            </mat-card>
+                        </div>
+                        <div class="bike-insuarnce-img-container text-end">
+                            <img class="img-fluid" src="vehicle-details/bike-insurance.gif" alt="bike-insurance">
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
-            
         </div>
     </div>
 </div>
