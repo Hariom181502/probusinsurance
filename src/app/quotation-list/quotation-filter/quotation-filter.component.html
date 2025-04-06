@@ -12,10 +12,11 @@
                 <mat-radio-button value="2">Third Party only</mat-radio-button>
             </mat-radio-group>
         </div>
-        <mat-accordion>
-            <mat-expansion-panel expanded>
+        <mat-accordion multi>
+            <mat-expansion-panel [expanded]="panelOpenState[0]" (opened)="panelOpenState[0] = true" (closed)="panelOpenState[0] = false">
                 <mat-expansion-panel-header>
                     <mat-panel-title> Set Your IDV </mat-panel-title>
+                    <img src="/filter-quotation/arrow.svg" class="custom-indicator" [class.rotate]="!panelOpenState[0]" alt="arrow" />
                 </mat-expansion-panel-header>
                 <mat-radio-group color="primary" class="medium-font">
                     <div>
@@ -36,15 +37,17 @@
                     </div>
                 </div>
             </mat-expansion-panel>
-            <mat-expansion-panel class="mt-2">
+            <mat-expansion-panel [expanded]="panelOpenState[1]" (opened)="panelOpenState[1] = true" (closed)="panelOpenState[1] = false" class="mt-2">
                 <mat-expansion-panel-header>
                     <mat-panel-title> Filter Insurance Company </mat-panel-title>
+                    <img src="/filter-quotation/arrow.svg" class="custom-indicator" [class.rotate]="!panelOpenState[1]" alt="arrow" />
                 </mat-expansion-panel-header>
                 Lorem Ipsum
             </mat-expansion-panel>
-            <mat-expansion-panel class="mt-2">
+            <mat-expansion-panel [expanded]="panelOpenState[2]" (opened)="panelOpenState[2] = true" (closed)="panelOpenState[2] = false" class="mt-2">
                 <mat-expansion-panel-header>
                     <mat-panel-title> Detraiff Discount </mat-panel-title>
+                    <img src="/filter-quotation/arrow.svg" class="custom-indicator" [class.rotate]="!panelOpenState[2]" alt="arrow" />
                 </mat-expansion-panel-header>
                 <mat-radio-group color="primary" class="medium-font">
                     <div>
@@ -58,19 +61,21 @@
                     </mat-form-field>
                 </div>
             </mat-expansion-panel>
-            <mat-expansion-panel class="mt-2">
+            <mat-expansion-panel [expanded]="panelOpenState[3]" (opened)="panelOpenState[3] = true" (closed)="panelOpenState[3] = false" class="mt-2">
                 <mat-expansion-panel-header>
                     <mat-panel-title> Additional Cover </mat-panel-title>
+                    <img src="/filter-quotation/arrow.svg" class="custom-indicator" [class.rotate]="!panelOpenState[3]" alt="arrow" />
                 </mat-expansion-panel-header>
                 Lorem Ipsum
             </mat-expansion-panel>
-            <mat-expansion-panel class="mt-2">
+            <mat-expansion-panel [expanded]="panelOpenState[4]" (opened)="panelOpenState[4] = true" (closed)="panelOpenState[4] = false" class="mt-2">
                 <mat-expansion-panel-header>
                     <mat-panel-title> AddOns Cover </mat-panel-title>
+                    <img src="/filter-quotation/arrow.svg" class="custom-indicator" [class.rotate]="!panelOpenState[4]" alt="arrow" />
                 </mat-expansion-panel-header>
                 Lorem Ipsum
             </mat-expansion-panel>
         </mat-accordion>
         <button mat-raised-button color="primary" class="w-100 mt-4">Re-Calculate </button>
     </div>
-</div>
+</div> 

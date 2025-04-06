@@ -180,6 +180,8 @@ body {
   .mat-mdc-form-field-subscript-wrapper {
     display: none !important;
   }
+
+
   .mat-mdc-select-value-text,
   .mat-mdc-floating-label,
   .mat-mdc-text-field .mdc-text-field__input{
@@ -196,8 +198,20 @@ body {
   .mat-mdc-select-arrow {
     // display: none;
   }
+  
 }
 .mdc-button.mdc-button--raised{
 --mdc-protected-button-disabled-container-color: #8C8C8C;
 --mdc-protected-button-disabled-label-text-color: #ffffff;
+}
+
+
+@media screen and (max-width:575px) {
+  .mat-mdc-form-field {
+    .mdc-text-field--outlined .mat-mdc-form-field-infix{
+    padding-top: 13px ;
+    padding-bottom: 13px ;
+    min-height: 0;
+  }
+}
 }

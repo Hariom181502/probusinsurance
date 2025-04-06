@@ -1,96 +1,73 @@
-<!-- <div class="header-container pt-1">
-    <div class="d-flex align-items-center justify-content-between">
-        <div class="img-container logo-container">
-            <img src="/header/logo.svg" alt="Logo">
-        </div>
-        <div class="menu-container d-none d-xl-block">
-            <ul class="list-unstyled cursor-pointer d-flex gap-4 mb-0 header-menu-list">
-                <li>Product <mat-icon>keyboard_arrow_down</mat-icon> </li>
-                <li>Renew Your Policy <mat-icon>keyboard_arrow_down</mat-icon> </li>
-                <li>File A Claim <mat-icon>keyboard_arrow_down</mat-icon> </li>
-                <li>Contact Us <mat-icon>keyboard_arrow_down</mat-icon> </li>
-                <li>Become A POSp</li>
-                <li>Endorsement</li>
-            </ul>
-        </div>
-         <div class="d-none d-xl-block">
-            <div class="user-container d-flex align-items-center gap-3 ">
-                <div class="user-info text-white">
-                    <p class="semibold-font f-12 m-0 user-name">ROHITASH YOGI</p>
-                    <div class="user-role-container d-flex align-items-center justify-content-end gap-2">
-                        <div class="user-role-dropdown-container cursor-pointer d-flex align-items-center justify-content-center">
-                            <img src="/header/arrow.svg" alt="arrow">
-                        </div>
-                        <p class="f-11 m-0 opacity-75 user-role">Admin</p>
-                    </div>
-                </div>
-                <div class="user-img-container">
-                    <img src="user.svg" alt="user">
-                </div>
-            </div>
-         </div>
-        <div class="menu-icon-container d-xl-none">
-            <img src="header/menu.svg" alt="menu">
-        </div>
+<div class="header-container pt-3">
+  <div class="d-flex align-items-center justify-content-between">
+    <!-- Logo -->
+    <div class="img-container logo-container">
+      <img src="/header/logo.svg" alt="Logo" />
     </div>
-</div> -->
 
+    <!-- Desktop Menu -->
+    <div class="menu-container d-none d-xl-block">
+      <ul class="header-menu-list">
+        @for (item of menuItems; track item; let i = $index) {
+        <li (mouseenter)="hoveredIndex = i" (mouseleave)="hoveredIndex = -1">
+          {{ item.title }}
+          <img *ngIf="item.hasArrow"
+            [src]="hoveredIndex === i ? '/header/hover-arrow-up.svg' : '/header/arrow-up.svg'"
+            alt="arrow"
+          />
+        </li>
+      }
+      </ul>
+    </div>
 
-<!-- Header Container -->
-<div class="header-container pt-1">
-    <div class="d-flex align-items-center justify-content-between">
-      <!-- Logo -->
-      <div class="img-container logo-container">
-        <img src="/header/logo.svg" alt="Logo" />
-      </div>
-  
-      <!-- Desktop Menu -->
-      <div class="menu-container d-none d-xl-block">
-        <ul class="list-unstyled cursor-pointer d-flex gap-4 mb-0 header-menu-list">
-          <li>Product <mat-icon>keyboard_arrow_down</mat-icon></li>
-          <li>Renew Your Policy <mat-icon>keyboard_arrow_down</mat-icon></li>
-          <li>File A Claim <mat-icon>keyboard_arrow_down</mat-icon></li>
-          <li>Contact Us <mat-icon>keyboard_arrow_down</mat-icon></li>
-          <li>Become A POSp</li>
-          <li>Endorsement</li>
-        </ul>
-      </div>
-  
-      <!-- Desktop User Info -->
-      <div class="d-none d-xl-block">
-        <div class="user-container d-flex align-items-center gap-3">
-          <div class="user-info text-white">
-            <p class="semibold-font f-12 m-0 user-name">ROHITASH YOGI</p>
-            <div class="user-role-container d-flex align-items-center justify-content-end gap-2">
-              <div class="user-role-dropdown-container cursor-pointer d-flex align-items-center justify-content-center">
-                <img src="/header/arrow.svg" alt="arrow" />
-              </div>
-              <p class="f-11 m-0 opacity-75 user-role">Admin</p>
+    <!-- Desktop User Info -->
+    <div class="d-none d-xl-block">
+      <div class="user-container d-flex align-items-center gap-3">
+        <div class="user-info">
+          <p class="user-name">ROHITASH YOGI</p>
+          <div class="user-role-container">
+            <div class="user-role-dropdown-container">
+              <img src="/header/arrow.svg" alt="arrow" />
             </div>
-          </div>
-          <div class="user-img-container">
-            <img src="user.svg" alt="user" />
+            <p class="user-role">Admin</p>
           </div>
         </div>
-      </div>
-  
-      <!-- Mobile Menu Icon -->
-      <div class="menu-icon-container d-xl-none" (click)="toggleMenu()">
-        <img src="header/menu.svg" alt="menu" />
+        <div class="user-img-container">
+          <img src="user.svg" alt="user" />
+        </div>
       </div>
     </div>
+
+    <!-- Mobile Menu Icon -->
+    <div class="menu-icon-container d-xl-none" (click)="toggleMenu()">
+      <img src="header/menu.svg" alt="menu" />
+    </div>
   </div>
-  
-  <!-- Mobile Menu -->
-  <div class="mobile-menu-overlay" [class.show]="isMenuOpen" (click)="closeMenu()"></div>
-  <div class="mobile-menu-container" [class.open]="isMenuOpen">
-    <ul class="list-unstyled mobile-header-menu-list">
-      <li (click)="closeMenu()">Product</li>
-      <li (click)="closeMenu()">Renew Your Policy</li>
-      <li (click)="closeMenu()">File A Claim</li>
-      <li (click)="closeMenu()">Contact Us</li>
-      <li (click)="closeMenu()">Become A POSp</li>
-      <li (click)="closeMenu()">Endorsement</li>
-    </ul>
+</div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu-overlay" [class.show]="isMenuOpen" (click)="closeMenu()"></div>
+<div class="mobile-menu-container" [class.open]="isMenuOpen">
+  <div class="d-flex align-items-center justify-content-between">
+    <div class="img-container logo-container">
+      <img src="/header/logo.svg" alt="Logo" />
+    </div>
+    <div class="menu-icon-container d-xl-none" (click)="closeMenu()">
+      <img src="header/cross.svg" alt="close" />
+    </div>
   </div>
-  
+
+  <ul class="mobile-header-menu-list mt-5">
+    @for (item of menuItems; track item;let i = $index) {
+    <li (mouseenter)="hoveredIndex = i"
+    (mouseleave)="hoveredIndex = -1">
+      {{ item.title }}
+      <img
+      *ngIf="item.hasArrow"
+      [src]="hoveredIndex === i ? '/header/hover-arrow-up.svg' : '/header/arrow-up.svg'"
+      alt="arrow"
+    />
+    </li>
+  }
+  </ul>
+</div>

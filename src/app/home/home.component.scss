@@ -1,11 +1,11 @@
 .homepage-container{
-    background-image: url(../../../public/homepage-bg.svg);
-    background-repeat: repeat-x;
+    background-image: url(../../../public/home-bg.png);
+    background-repeat: no-repeat;
     background-position: bottom right;
 }
 
 .height-100{
-    height: calc(100vh - 50px);
+    height: calc(100vh - 57px);
 }
 
 .custom-card-outline{
@@ -50,5 +50,15 @@
     .bike-insurance-image-container{
         max-width: 300px;
       }
+}
+@media screen and (max-width: 410px){
+    .call-whatsapp-container{
+       .call-chat-text{
+        font-size: 1.1rem;
+       } 
+       .ph-number{
+        font-size: 1.2rem;
+       }
+    }
 }
 

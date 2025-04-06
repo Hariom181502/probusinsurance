@@ -8,5 +8,8 @@ import { MaterialModule } from '../../shared/module/material/material.module';
   styleUrl: './quotation-filter.component.scss'
 })
 export class QuotationFilterComponent {
+ 
+  panelOpenState: boolean[] = [true, false, true, false, false];
+
 
 }

@@ -9,7 +9,9 @@
         box-shadow: none !important;
         border: 1px solid #E5E7EB;
     }
-
+    .mat-expansion-indicator {
+        display: none !important;
+      }
     .mat-expansion-panel-header{
         .mat-expansion-panel-header-title{
             font-size: 1.6rem;
@@ -52,3 +54,19 @@
     }
 
 }
+
+::ng-deep .custom-indicator {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+    margin-left: auto;
+  
+    &.rotate {
+      transform: rotate(180deg);
+    }
+  }
+  
+  
+  
+ 
+  
