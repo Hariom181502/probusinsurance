@@ -20,7 +20,8 @@
         cursor: pointer;
         transition: color 0.2s ease;
 
-        &:hover {
+        &:hover,
+        &.active {
           color: var(--secondary);
         }
 
@@ -137,7 +138,7 @@
       align-items: center;
       gap: 6px;
       cursor: pointer;
-      &:hover {
+      &:hover , &.active {
         color: var(--secondary);
       }
       img {

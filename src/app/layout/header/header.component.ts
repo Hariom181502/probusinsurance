@@ -12,6 +12,7 @@ export class HeaderComponent {
  
   isMenuOpen = false;
   hoveredIndex = -1;
+  activeIndex = 0;
 
   menuItems = [
     { title: 'Product', hasArrow: true },
@@ -28,6 +29,10 @@ export class HeaderComponent {
 
   closeMenu(): void {
     this.isMenuOpen = false;
+  }
+  
+  setActive(index: number): void {
+    this.activeIndex = index;
   }
   
 }

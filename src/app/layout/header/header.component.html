@@ -1,6 +1,5 @@
 <div class="header-container pt-3">
   <div class="d-flex align-items-center justify-content-between">
-    <!-- Logo -->
     <div class="img-container logo-container">
       <img src="/header/logo.svg" alt="Logo" />
     </div>
@@ -9,14 +8,12 @@
     <div class="menu-container d-none d-xl-block">
       <ul class="header-menu-list">
         @for (item of menuItems; track item; let i = $index) {
-        <li (mouseenter)="hoveredIndex = i" (mouseleave)="hoveredIndex = -1">
+        <li [class.active]="activeIndex === i" (click)="setActive(i)" (mouseenter)="hoveredIndex = i" (mouseleave)="hoveredIndex = -1">
           {{ item.title }}
-          <img *ngIf="item.hasArrow"
-            [src]="hoveredIndex === i ? '/header/hover-arrow-up.svg' : '/header/arrow-up.svg'"
-            alt="arrow"
-          />
+          <img *ngIf="item.hasArrow" [src]="(hoveredIndex === i || activeIndex === i) ? '/header/hover-arrow-up.svg' : '/header/arrow-up.svg'"
+            alt="arrow" />
         </li>
-      }
+        }
       </ul>
     </div>
 
@@ -46,7 +43,7 @@
 </div>
 
 <!-- Mobile Menu -->
-<div class="mobile-menu-overlay" [class.show]="isMenuOpen" (click)="closeMenu()"></div>
+<div class="mobile-menu-overlay" [class.show]="isMenuOpen"></div>
 <div class="mobile-menu-container" [class.open]="isMenuOpen">
   <div class="d-flex align-items-center justify-content-between">
     <div class="img-container logo-container">
@@ -59,15 +56,11 @@
 
   <ul class="mobile-header-menu-list mt-5">
     @for (item of menuItems; track item;let i = $index) {
-    <li (mouseenter)="hoveredIndex = i"
-    (mouseleave)="hoveredIndex = -1">
+    <li [class.active]="activeIndex === i" (click)="setActive(i)" (mouseenter)="hoveredIndex = i" (mouseleave)="hoveredIndex = -1">
       {{ item.title }}
-      <img
-      *ngIf="item.hasArrow"
-      [src]="hoveredIndex === i ? '/header/hover-arrow-up.svg' : '/header/arrow-up.svg'"
-      alt="arrow"
-    />
+      <img *ngIf="item.hasArrow" [src]="(hoveredIndex === i || activeIndex === i) ? '/header/hover-arrow-up.svg' : '/header/arrow-up.svg'"
+        alt="arrow" />
     </li>
-  }
+    }
   </ul>
 </div>
