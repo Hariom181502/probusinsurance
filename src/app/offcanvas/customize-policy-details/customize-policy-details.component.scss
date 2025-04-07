@@ -1,10 +1,22 @@
-.header-container{
-    background-color: rgba(8, 70, 131, 0.021);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    border-radius: 1rem 1rem 0rem 0rem;
-}
+::ng-deep .customzie-policy-canvas-container{
+    .offcanvas{
+       width: 100%;
+        z-index: 11;
+    }
 
-::ng-deep .filter-quotation-container{
+    .offcanvas-backdrop{
+        z-index: 10 !important;
+    }
+    .offcanvas-header{
+        justify-content: space-between;
+        background-color: rgba(8, 70, 131,.02);
+        border-bottom: 1px solid rgba(0, 0, 0,.05);
+        padding: 12px 15px; 
+    }
+    .offcanvas-body{
+        height: calc(100vh - 120px);
+    }
+
     .mat-expansion-panel{
         box-shadow: none !important;
         border: 1.5px solid #E5E7EB;
@@ -54,9 +66,7 @@
         padding-bottom: 8px !important;
     }
 
-}
-
-::ng-deep .custom-indicator {
+ .custom-indicator {
     width: 20px;
     height: 20px;
     transition: transform 0.3s ease;
@@ -66,8 +76,5 @@
       transform: rotate(180deg);
     }
   }
-  
-  
-  
- 
+}
   

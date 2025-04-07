@@ -199,7 +199,32 @@ body {
 --mdc-protected-button-disabled-label-text-color: #ffffff;
 }
 
+//------------------------
+//-----Layout Styling------
+//------------------------
+@mixin background-common($bg-color) {
+  background-image: url(../public/commom-bg.png);
+  background-color: $bg-color;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  position: relative;
+  z-index: 0;
+}
 
+.home-bg-layout {
+  @include background-common(white);
+}
+
+.other-bg-layout {
+  @include background-common(#F3FAFB);
+}
+
+.quotation-bg-layout {
+  background: none;
+}
+
+
+// Media Query
 @media screen and (max-width:575px) {
   .mat-mdc-form-field {
     .mdc-text-field--outlined .mat-mdc-form-field-infix{

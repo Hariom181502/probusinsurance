@@ -20,7 +20,7 @@
                     <div>
                         <div class="btns-container quotation-btns-container d-flex gap-3 flex-wrap align-items-center">
                             <button mat-stroked-button color="primary" class="btn-primary-border bold-font">
-                                <img src="icon_target.svg" alt="Target"> Know My Current Contest
+                                <img src="icon_target.svg" alt="Target"> <span class="ms-2 d-none d-sm-inline">Know My Current</span> Contest
                             </button>
                             <button mat-stroked-button color="primary" class="btn-primary-border bold-font">
                                 <img src="icon_info.svg" alt="Target"> Raise query
@@ -36,18 +36,20 @@
         </mat-card>
         <div class="row mt-2 gy-4 align-items-center">
             <div class="col-12 col-md-4 col-lg-3">
-                <div class="d-flex gap-3 align-items-center">
+                <div class="d-flex gap-3 justify-content-between justify-content-md-start align-items-center">
                     <p class="medium-font opacity-75 m-0 f-14">Share Quotes By :</p>
+                    <div class="d-flex gap-2">
                     <img src="links.svg" alt="Links icon">
                     <img src="mail.svg" alt="Mail icon">
                     <img src="whatsapp.svg" alt="Mail icon">
+                    </div>
                 </div>
             </div>
             <div class="col-12 col-md-8 col-lg-9">
                 <mat-card class="check-select-container">
                     <mat-card-content>
                         <div class="d-flex justify-content-between align-items-center flex-wrap">
-                           <div class="d-flex align-items-center gap-3">
+                           <div class="d-flex align-items-center flex-wrap gap-3">
                             <div class="d-flex align-items-center gap-3">
                                 <mat-checkbox class="opacity-75" color="primary"></mat-checkbox>
                                 <p class="f-14 m-0 mt-2">I need a mandatory PA Owner Driver Cover</p>
@@ -61,7 +63,7 @@
                                 <p class="f-14 m-0 mt-2">Unlimited Claims</p>
                             </div>
                            </div>
-                            <mat-form-field appearance="outline">
+                            <mat-form-field class="d-none d-sm-inline" appearance="outline">
                                 <mat-select  placeholder="Sort: Best Match">
                                     <mat-option value="volvo">Volvo</mat-option>
                                     <mat-option value="saab">Saab</mat-option>
@@ -74,8 +76,27 @@
                 </mat-card>
             </div>
         </div>
+         <div class="customize-policy-container d-block d-sm-none mt-4">
+            <div class="d-flex justify-content-center align-items-center gap-3">
+                <button mat-raised-button color="primary" class="bold-font" data-bs-toggle="offcanvas"
+                data-bs-target="#staticBackdrop"  data-bs-target="#customizePolicyOffcanvas">
+                    Customize Policy   <img src="/filter-quotation/mi_filter.svg" alt="Target"> 
+                </button>
+                <div class="dropdown-container">
+                    <mat-form-field appearance="outline">
+                        <mat-select  placeholder="Sort: Best Match">
+                            <mat-option value="volvo">Volvo</mat-option>
+                            <mat-option value="saab">Saab</mat-option>
+                            <mat-option value="mercedes">Mercedes</mat-option>
+                            <mat-option value="audi">Audi</mat-option>
+                        </mat-select>
+                        <img matSuffix class="d-inline-block pe-1" src="/filter-quotation/nav-arrow-down.svg" />
+                    </mat-form-field>
+                </div>
+            </div>
+         </div>
         <div class="row mt-2 gy-4">
-            <div class="col-12 col-md-4 col-lg-3">
+            <div class="col-12 col-md-4 col-lg-3 d-none d-sm-block">
                 <app-quotation-filter></app-quotation-filter>
             </div>
             <div class="col-12 col-md-8 col-lg-9">

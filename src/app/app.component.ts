@@ -1,16 +1,35 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { MaterialModule } from './shared/module/material/material.module';
+import { filter } from 'rxjs';
+import { CommonModule } from '@angular/common';
+import { CustomizePolicyDetailsComponent } from "./offcanvas/customize-policy-details/customize-policy-details.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MaterialModule],
+  imports: [RouterOutlet, MaterialModule, CommonModule, CustomizePolicyDetailsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'probusinsurance';
+  
+  layoutClass = '';
 
-constructor() {}
+  constructor(private router: Router) {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        const url = event.urlAfterRedirects;
+
+        if (url.includes('quotation')) {
+          this.layoutClass = 'quotation-bg-layout';
+        } else if (url === '/' || url.includes('home')) {
+          this.layoutClass = 'home-bg-layout';
+        } else {
+          this.layoutClass = 'other-bg-layout';
+        }
+      });
+  }
 
 }
