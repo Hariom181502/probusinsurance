@@ -1,11 +1,14 @@
 .homepage-container{
     background-image: url(../../../public/home-bg.png);
+    background-image: url(../../../public/vehicle-details/commom-bg.png);
     background-repeat: no-repeat;
     background-position: bottom right;
+    position: relative;
+    z-index: 0;
 }
 
 .height-100{
-    height: calc(100vh - 57px);
+    min-height: calc(100vh - 57px);
 }
 
 .custom-card-outline{
@@ -41,11 +44,6 @@
   max-width: 360px;
 }
 
-@media screen and (max-width: 991px){
-    .height-100{
-        height: 100%;
-    }
-}
 @media screen and (max-width: 575px){
     .bike-insurance-image-container{
         max-width: 300px;

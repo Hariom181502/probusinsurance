@@ -28,7 +28,8 @@
     position: relative;
     z-index: 0;
     .height-100 {
-        height: calc(100vh - 61px);
+        min-height: calc(100vh - 61px);
+        height: 100%;
         padding-top: 8rem;
     }
     .custom-card-outline {
@@ -70,30 +71,12 @@
     max-width: 360px;
 }
 
-// Media Query
-@media screen and (max-width: 1399px) {
-    .vehicle-details-container{
-    .height-100 {
-        padding-top: 5rem;
-    }
-    .why-choose-probus-content-container {
-        gap: 3rem;
-    }
-}
-}
 
-@media screen and (max-width: 1366px) {
-    .vehicle-details-container{
-    .height-100 {
-        height: 100%;
-    }
-}
-}
 
 @media screen and (max-width: 767px) {
     .vehicle-details-container{
     .height-100 {
-        padding-top: 5rem;
+        padding-top: 3rem;
     }
 }
 }

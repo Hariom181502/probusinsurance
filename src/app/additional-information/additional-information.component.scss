@@ -30,8 +30,9 @@
     position: relative;
     z-index: 0;
     .height-100 {
-        height: calc(100vh - 61px);
+        min-height: calc(100vh - 61px);
         padding-top: 8rem;
+        margin-top: 0rem;
     }
     .custom-card-outline {
         position: relative;
@@ -76,29 +77,12 @@
 }
 
 // Media Query
-@media screen and (max-width: 1399px) {
-    .additional-information-container {
-        .height-100 {
-            padding-top: 5rem;
-        }
-        .why-choose-probus-content-container {
-            gap: 3rem;
-        }
-    }
-}
-
-@media screen and (max-width: 1366px) {
-    .additional-information-container {
-        .height-100 {
-            height: 100%;
-        }
-    }
-}
-
 @media screen and (max-width: 767px) {
     .additional-information-container {
         .height-100 {
-            padding-top: 5rem;
+            min-height: calc(100vh - 88px);
+            padding-top: 3rem;
+            margin-top: 3rem;
         }
     }
 }
