@@ -12,6 +12,8 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSliderModule} from '@angular/material/slider';
+import { MatTooltipModule } from '@angular/material/tooltip';
+
 
 @NgModule({
   declarations: [],
@@ -44,7 +46,8 @@ import {MatSliderModule} from '@angular/material/slider';
     MatButtonModule,
     ReactiveFormsModule,
     MatSliderModule,
-    FormsModule
+    FormsModule,
+    MatTooltipModule
   ]
 })
 export class MaterialModule { }

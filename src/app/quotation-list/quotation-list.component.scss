@@ -74,3 +74,12 @@
           }
     } 
 }
+
+@media screen and (max-width:403px) {
+    ::ng-deep .quotation-btns-container{
+        .mat-mdc-outlined-button{
+            padding: 18px 12px;
+        }
+    }
+        
+}

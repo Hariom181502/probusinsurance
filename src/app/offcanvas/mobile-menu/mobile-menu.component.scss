@@ -1,0 +1,82 @@
+::ng-deep .mobile-menu-canvas-container {
+    .offcanvas {
+        width: 100%;
+        z-index: 11;
+        height: 70%;
+    }
+
+    .offcanvas-backdrop {
+        z-index: 10 !important;
+    }
+
+    .offcanvas-header {
+        justify-content: space-between;
+    }
+
+    .mobile-header-menu-list {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        font-size: 1.8rem;
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+
+            &:hover,
+            &.active {
+                color: var(--secondary);
+            }
+
+            img {
+                width: 18px;
+            }
+        }
+    }
+
+    .user-container {
+        .user-name {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #6a6a6a;
+        }
+
+        .user-role-container {
+            gap: 0.5rem;
+
+            .user-role-dropdown-container {
+                width: 12px;
+                height: 12px;
+                border: 1px solid #6a6a6a;
+                border-radius: 50%;
+
+                img {
+                    width: 7px;
+                }
+            }
+
+            .user-role {
+                color: #b6b6b6;
+            }
+        }
+
+        .user-img-container {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

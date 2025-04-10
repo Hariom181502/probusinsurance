@@ -76,5 +76,10 @@
       transform: rotate(180deg);
     }
   }
+  .recalculate-button{
+    .mat-mdc-raised-button{
+        padding: 24px 0  !important;
+    }
+  }
 }
   

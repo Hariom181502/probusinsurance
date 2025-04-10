@@ -4,10 +4,11 @@ import { MaterialModule } from './shared/module/material/material.module';
 import { filter } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { CustomizePolicyDetailsComponent } from "./offcanvas/customize-policy-details/customize-policy-details.component";
+import { MobileMenuComponent } from "./offcanvas/mobile-menu/mobile-menu.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MaterialModule, CommonModule, CustomizePolicyDetailsComponent],
+  imports: [RouterOutlet, MaterialModule, CommonModule, CustomizePolicyDetailsComponent, MobileMenuComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

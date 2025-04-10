@@ -40,6 +40,26 @@
         font-family: 'inter-sb';
     }
 }
+::ng-deep .single-ticket-container{
+.mat-mdc-checkbox {
+    .mdc-checkbox__background {
+        width: 22px !important;
+        height: 22px !important;
+        border-radius: 4px !important;
+    }
+    &.mat-mdc-checkbox-checked {
+        .mdc-checkbox__background {
+            outline: none !important;
+            border: nonef !important;
+        }
+        .mdc-checkbox__checkmark {
+            top: 3px;
+            left: 3px;
+            width: 66%;
+        }
+    }
+  }
+}
 
 ::ng-deep .rotate-icon {
     rotate: 180deg;
@@ -68,35 +88,6 @@
         .mdc-button__label {
             font-size: 1.7rem !important;
             font-family: 'inter-sb';
-        }
-    }
-}
-
-
-.best-seller-content-container {
-    position: relative;
-    .best-seller-content {
-        position: absolute;
-        left: -32px;
-    top: -13px;
-    background-color: var(--primary);
-    font-size: 0.8rem;
-    padding: 13px 10px;
-    clip-path: polygon(20% 67%, 82% 67%, 100% 98%, 1% 96%);
-    transform: rotate(-46deg);
-        .seller-text {
-            position: relative;
-            top: 10px;
-            font-size: 1rem;
-            right: 7px;
-        }
-        .start-icon {
-            position: relative;
-            transform: scale(0.5);
-            top: 9px;
-            left: 6px;
-            color: yellow;
-
         }
     }
 }

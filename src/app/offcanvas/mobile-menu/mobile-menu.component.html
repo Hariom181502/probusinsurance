@@ -1,0 +1,43 @@
+<div class="mobile-menu-canvas-container">
+    <div class="offcanvas offcanvas-top" data-bs-backdrop="static" id="mobileMenuOffcanvas">
+
+        <div class="offcanvas-header">
+            <img src="/header/logo.svg" alt="Logo" />
+            <img class="cursor-pointer" data-bs-dismiss="offcanvas" src="/filter-quotation/cross.svg" alt="cancelImg"
+                width="14px">
+        </div>
+
+        <div class="offcanvas-body">
+            <div class="mobile-menu-container">
+                <ul class="mobile-header-menu-list mt-3">
+                    @for (item of menuItems; track item;let i = $index) {
+                    <li [class.active]="activeIndex === i" (click)="setActive(i)" (mouseenter)="hoveredIndex = i"
+                        (mouseleave)="hoveredIndex = -1">
+                        {{ item.title }}
+                        <img *ngIf="item.hasArrow"
+                            [src]="(hoveredIndex === i || activeIndex === i) ? '/header/hover-arrow-up.svg' : '/header/arrow-up.svg'"
+                            alt="arrow" />
+                    </li>
+                    }
+                </ul>
+            </div>
+            <div class="user-container d-flex align-items-center gap-3 mt-5">
+                <div class="user-img-container">
+                    <img src="user.svg" alt="user" />
+                </div>
+                <div class="user-info">
+                    <p class="user-name">ROHITASH YOGI</p>
+                    <div class="user-role-container d-flex align-items-center justify-content-start">
+                        <div
+                            class="user-role-dropdown-container d-flex align-items-center justify-content-center cursor-pointer">
+                            <img src="/header/arrow.svg" alt="arrow" />
+                        </div>
+                        <p class="user-role f-11 m-0 opacity-75">Admin</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

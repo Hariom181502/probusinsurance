@@ -1,23 +1,24 @@
 <div class="header-container pt-3">
+  
   <div class="d-flex align-items-center justify-content-between">
     <div class="img-container logo-container">
       <img src="/header/logo.svg" alt="Logo" />
     </div>
 
-    <!-- Desktop Menu -->
     <div class="menu-container d-none d-xl-block">
       <ul class="header-menu-list">
         @for (item of menuItems; track item; let i = $index) {
-        <li [class.active]="activeIndex === i" (click)="setActive(i)" (mouseenter)="hoveredIndex = i" (mouseleave)="hoveredIndex = -1">
+        <li [class.active]="activeIndex === i" (click)="setActive(i)" (mouseenter)="hoveredIndex = i"
+          (mouseleave)="hoveredIndex = -1">
           {{ item.title }}
-          <img *ngIf="item.hasArrow" [src]="(hoveredIndex === i || activeIndex === i) ? '/header/hover-arrow-up.svg' : '/header/arrow-up.svg'"
+          <img *ngIf="item.hasArrow"
+            [src]="(hoveredIndex === i || activeIndex === i) ? '/header/hover-arrow-up.svg' : '/header/arrow-up.svg'"
             alt="arrow" />
         </li>
         }
       </ul>
     </div>
 
-    <!-- Desktop User Info -->
     <div class="d-none d-xl-block">
       <div class="user-container d-flex align-items-center gap-3">
         <div class="user-info">
@@ -36,31 +37,9 @@
     </div>
 
     <!-- Mobile Menu Icon -->
-    <div class="menu-icon-container d-xl-none" (click)="toggleMenu()">
+    <div class="menu-icon-container d-xl-none" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop"
+      data-bs-target="#mobileMenuOffcanvas">
       <img src="header/menu.svg" alt="menu" />
     </div>
   </div>
-</div>
-
-<!-- Mobile Menu -->
-<div class="mobile-menu-overlay" [class.show]="isMenuOpen"></div>
-<div class="mobile-menu-container" [class.open]="isMenuOpen">
-  <div class="d-flex align-items-center justify-content-between">
-    <div class="img-container logo-container">
-      <img src="/header/logo.svg" alt="Logo" />
-    </div>
-    <div class="menu-icon-container d-xl-none" (click)="closeMenu()">
-      <img src="header/cross.svg" alt="close" />
-    </div>
-  </div>
-
-  <ul class="mobile-header-menu-list mt-5">
-    @for (item of menuItems; track item;let i = $index) {
-    <li [class.active]="activeIndex === i" (click)="setActive(i)" (mouseenter)="hoveredIndex = i" (mouseleave)="hoveredIndex = -1">
-      {{ item.title }}
-      <img *ngIf="item.hasArrow" [src]="(hoveredIndex === i || activeIndex === i) ? '/header/hover-arrow-up.svg' : '/header/arrow-up.svg'"
-        alt="arrow" />
-    </li>
-    }
-  </ul>
 </div>

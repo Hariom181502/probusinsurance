@@ -1,70 +1,88 @@
 <app-inner-header [title]="logoTitle"></app-inner-header>
+
 <div class="color-bg-container">
     <div class="container pt-4">
+
         <mat-card>
             <mat-card-content>
-                <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-4">
                     <div class="vehicle-summury-container">
-                        <div class="d-flex gap-5 align-items-end">
+                        <div class="d-flex gap-5 align-items-end justify-content-between">
                             <div>
                                 <p class="m-0 medium-font f-12">Honda Activa 3G STD (58 CC )</p>
-                                <p class="m-0 medium-font f-12">Petrol Two Wheeler RJ14 Jaipur</p>
+                                <p class="m-0 medium-font f-12 d-none d-lg-block">Petrol Two Wheeler RJ14 Jaipur</p>
                             </div>
-                            <div class="cursor-pointer">
-                                <img src="icon_edit.svg" alt="Edit Icon">
+                            <div class="cursor-pointer d-none d-lg-block">
+                                <img src="icon_edit.svg" alt="Edit Icon" />
                                 <span class="medium-font f-12 primary">Edit</span>
                             </div>
                         </div>
                         <p class="m-0 medium-font opacity-75 f-12">PIBLMTRTW2025022012540788123</p>
                     </div>
-                    <div>
-                        <div class="btns-container quotation-btns-container d-flex gap-3 flex-wrap align-items-center">
+
+                    <div class="cursor-pointer d-flex d-lg-none">
+                        <img src="icon_edit.svg" alt="Edit Icon" width="18px" />
+                        <span class="medium-font f-18 primary ps-2">Edit</span>
+                    </div>
+
+                    <div *ngIf="!isMobile || showMobileExtras" class="d-block">
+                        <div  class="btns-container quotation-btns-container d-flex gap-3 flex-wrap align-items-center mt-3">
                             <button mat-stroked-button color="primary" class="btn-primary-border bold-font">
-                                <img src="icon_target.svg" alt="Target"> <span class="ms-2 d-none d-sm-inline">Know My Current</span> Contest
+                                <img src="icon_target.svg" alt="Target" />
+                                <span class="ms-2 d-none d-md-inline">Know My Current</span> Contest
                             </button>
                             <button mat-stroked-button color="primary" class="btn-primary-border bold-font">
-                                <img src="icon_info.svg" alt="Target"> Raise query
+                                <img src="icon_info.svg" alt="Info" />
+                                <span class="ms-2 d-none d-md-inline">Raise</span> query
                             </button>
-                            <button mat-raised-button color="primary" class="btn-primary-border bold-font pos-rel">
-                                <img src="icon_add_fill.svg" alt="Target"> Compare
+                            <button mat-stroked-button color="primary" class="btn-primary-border bold-font pos-rel">
+                                <img src="quotation/add_compare.svg" alt="Compare" /> Compare
                                 <span>only in Probus</span>
                             </button>
                         </div>
                     </div>
                 </div>
             </mat-card-content>
+
+            <div *ngIf="isMobile && !arrowVisible" class="expand-more-container text-center mt-2"
+                [matTooltip]="'Expand to see more'" (click)="toggleInfo('expand')">
+                <img src="quotation/see-more.svg" alt="Expand" width="24px" />
+            </div>
         </mat-card>
-        <div class="row mt-2 gy-4 align-items-center">
+
+        <div *ngIf="!isMobile || showMobileExtras" class="row mt-2 gy-4 align-items-center">
             <div class="col-12 col-md-4 col-lg-3">
-                <div class="d-flex gap-3 justify-content-between justify-content-md-start align-items-center">
+                <div class="d-flex gap-3 justify-content-between justify-content-md-start align-items-center px-2">
                     <p class="medium-font opacity-75 m-0 f-14">Share Quotes By :</p>
                     <div class="d-flex gap-2">
-                    <img src="links.svg" alt="Links icon">
-                    <img src="mail.svg" alt="Mail icon">
-                    <img src="whatsapp.svg" alt="Mail icon">
+                        <img src="links.svg" alt="Links icon" />
+                        <img src="mail.svg" alt="Mail icon" />
+                        <img src="whatsapp.svg" alt="WhatsApp icon" />
                     </div>
                 </div>
             </div>
+
             <div class="col-12 col-md-8 col-lg-9">
                 <mat-card class="check-select-container">
                     <mat-card-content>
-                        <div class="d-flex justify-content-between align-items-center flex-wrap">
-                           <div class="d-flex align-items-center flex-wrap gap-3">
-                            <div class="d-flex align-items-center gap-3">
-                                <mat-checkbox class="opacity-75" color="primary"></mat-checkbox>
-                                <p class="f-14 m-0 mt-2">I need a mandatory PA Owner Driver Cover</p>
+                        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+                            <div class="d-flex align-items-center flex-wrap gap-3">
+                                <div class="d-flex align-items-center gap-3">
+                                    <mat-checkbox class="opacity-75" color="primary"></mat-checkbox>
+                                    <p class="f-14 m-0 mt-2">I need a mandatory PA Owner Driver Cover</p>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                    <mat-checkbox class="opacity-75" color="primary"></mat-checkbox>
+                                    <p class="f-14 m-0 mt-2">Show Activity Points</p>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                    <mat-checkbox class="opacity-75" color="primary"></mat-checkbox>
+                                    <p class="f-14 m-0 mt-2">Unlimited Claims</p>
+                                </div>
                             </div>
-                            <div class="d-flex align-items-center gap-3">
-                                <mat-checkbox class="opacity-75" color="primary"></mat-checkbox>
-                                <p class="f-14 m-0  mt-2">Show Activity Points</p>
-                            </div>
-                            <div class="d-flex align-items-center gap-3">
-                                <mat-checkbox class="opacity-75" color="primary"></mat-checkbox>
-                                <p class="f-14 m-0 mt-2">Unlimited Claims</p>
-                            </div>
-                           </div>
+
                             <mat-form-field class="d-none d-sm-inline" appearance="outline">
-                                <mat-select  placeholder="Sort: Best Match">
+                                <mat-select placeholder="Sort: Best Match">
                                     <mat-option value="volvo">Volvo</mat-option>
                                     <mat-option value="saab">Saab</mat-option>
                                     <mat-option value="mercedes">Mercedes</mat-option>
@@ -73,28 +91,35 @@
                             </mat-form-field>
                         </div>
                     </mat-card-content>
+
+                    <div *ngIf="isMobile && arrowVisible" class="expand-more-container text-center mt-3"
+                        [matTooltip]="'Collapse to see less'" (click)="toggleInfo('collapse')">
+                        <img src="quotation/less-more.svg" alt="Collapse" width="24px" />
+                    </div>
                 </mat-card>
             </div>
         </div>
-         <div class="customize-policy-container d-block d-sm-none mt-4">
+
+        <div class="customize-policy-container d-block d-sm-none mt-4">
             <div class="d-flex justify-content-center align-items-center gap-3">
                 <button mat-raised-button color="primary" class="bold-font" data-bs-toggle="offcanvas"
-                data-bs-target="#staticBackdrop"  data-bs-target="#customizePolicyOffcanvas">
-                    Customize Policy   <img src="/filter-quotation/mi_filter.svg" alt="Target"> 
+                    data-bs-target="#customizePolicyOffcanvas">
+                    Customize Policy <img src="filter-quotation/mi_filter.svg" alt="Target" />
                 </button>
                 <div class="dropdown-container">
                     <mat-form-field appearance="outline">
-                        <mat-select  placeholder="Sort: Best Match">
+                        <mat-select placeholder="Sort: Best Match">
                             <mat-option value="volvo">Volvo</mat-option>
                             <mat-option value="saab">Saab</mat-option>
                             <mat-option value="mercedes">Mercedes</mat-option>
                             <mat-option value="audi">Audi</mat-option>
                         </mat-select>
-                        <img matSuffix class="d-inline-block pe-1" src="/filter-quotation/nav-arrow-down.svg" />
+                        <img matSuffix class="d-inline-block pe-1" src="filter-quotation/nav-arrow-down.svg" />
                     </mat-form-field>
                 </div>
             </div>
-         </div>
+        </div>
+
         <div class="row mt-2 gy-4">
             <div class="col-12 col-md-4 col-lg-3 d-none d-sm-block">
                 <app-quotation-filter></app-quotation-filter>
@@ -103,5 +128,6 @@
                 <app-single-quotation></app-single-quotation>
             </div>
         </div>
+
     </div>
 </div>
