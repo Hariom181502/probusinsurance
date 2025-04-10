@@ -203,7 +203,7 @@ body {
 //-----Layout Styling------
 //------------------------
 @mixin background-common($bg-color) {
-  background-image: url(../public/commom-bg.png);
+  background-image: url(../public/common-bg.png);
   background-color: $bg-color;
   background-repeat: no-repeat;
   background-position: bottom right;

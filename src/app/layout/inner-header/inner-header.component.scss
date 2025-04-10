@@ -7,3 +7,15 @@
     border-radius: 50%;
     object-fit: cover;
 }
+.user-role-container {
+    gap: 0.5rem;
+    .user-role-dropdown-container {
+      width: 12px;
+      height: 12px;
+      border: 1px solid #ffffff;
+      border-radius: 50%;
+      img {
+        width: 5px;
+      }
+    }
+  }
