@@ -4,6 +4,7 @@ import { InnerHeaderComponent } from '../layout/inner-header/inner-header.compon
 import { MaterialModule } from '../shared/module/material/material.module';
 import { QuotationFilterComponent } from './quotation-filter/quotation-filter.component';
 import { CommonModule } from '@angular/common';
+import { selectedPolicyDtl } from './jsonData';
 
 @Component({
   selector: 'app-quotation-list',
@@ -18,14 +19,22 @@ export class QuotationListComponent implements OnInit {
   isMobile = false;
   showMobileExtras = true;
   arrowVisible = false;
+  selectedPolicyDtl:any;
+  showSelectedPolicy:boolean=false;
+expression: any;
 
   ngOnInit(): void {
+    this.setValues();
     this.checkScreenSize();
   }
 
   @HostListener('window:resize', [])
   onResize() {
     this.checkScreenSize();
+  }
+
+  setValues(){
+    this.selectedPolicyDtl = selectedPolicyDtl;
   }
 
   checkScreenSize() {

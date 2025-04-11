@@ -3,8 +3,8 @@
 <div class="color-bg-container">
     <div class="container pt-4">
 
-        <mat-card>
-            <mat-card-content>
+        <mat-card class="expand-card-container">
+            <mat-card-content class="pb-4 mb-2">
                 <div class="d-flex justify-content-between align-items-center flex-wrap gap-4">
                     <div class="vehicle-summury-container">
                         <div class="d-flex gap-5 align-items-end justify-content-between">
@@ -44,9 +44,13 @@
                 </div>
             </mat-card-content>
 
-            <div *ngIf="isMobile && !arrowVisible" class="expand-more-container text-center mt-2"
+            <div *ngIf="isMobile && !arrowVisible" class="expand-more-container d-flex align-items-start gap-1"
                 [matTooltip]="'Expand to see more'" (click)="toggleInfo('expand')">
                 <img src="quotation/see-more.svg" alt="Expand" width="24px" />
+                 <div class="tootltip-container expand-more d-flex align-items-end gap-1">
+                    <img src="quotation/expand-tooltip.svg" alt="tooltip">
+                    <p class="f-10 primary m-0">Expand To See More</p>
+                 </div>
             </div>
         </mat-card>
 
@@ -64,7 +68,7 @@
 
             <div class="col-12 col-md-8 col-lg-9">
                 <mat-card class="check-select-container">
-                    <mat-card-content>
+                    <mat-card-content class="pb-4 mb-4">
                         <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
                             <div class="d-flex align-items-center flex-wrap gap-3">
                                 <div class="d-flex align-items-center gap-3">
@@ -92,15 +96,19 @@
                         </div>
                     </mat-card-content>
 
-                    <div *ngIf="isMobile && arrowVisible" class="expand-more-container text-center mt-3"
+                    <div *ngIf="isMobile && arrowVisible" class="expand-more-container d-flex align-items-start gap-1 mt-3"
                         [matTooltip]="'Collapse to see less'" (click)="toggleInfo('collapse')">
                         <img src="quotation/less-more.svg" alt="Collapse" width="24px" />
+                        <div class="tootltip-container less-more d-flex align-items-end gap-1">
+                            <img src="quotation/expand-tooltip.svg" alt="tooltip">
+                            <p class="f-10 primary m-0">Collapse To See Less</p>
+                         </div>
                     </div>
                 </mat-card>
             </div>
         </div>
 
-        <div class="customize-policy-container d-block d-sm-none mt-4">
+        <div class="customize-policy-container d-block d-sm-none mt-5">
             <div class="d-flex justify-content-center align-items-center gap-3">
                 <button mat-raised-button color="primary" class="bold-font" data-bs-toggle="offcanvas"
                     data-bs-target="#customizePolicyOffcanvas">
@@ -130,4 +138,23 @@
         </div>
 
     </div>
+</div>
+
+<div  class="compare-policy-category-container py-4">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap gap-4">
+        <div class="img-container d-flex align-items-center gap-4">
+        @for (item of selectedPolicyDtl; track $index) {
+            <div class="policy-img-container">
+                <img [src]="item.imgPath" alt="bajaj" width="120px">
+                <div class="cross-icon-container cursor-pointer">
+                    <img src="quotation/selected-policy/cross.svg" alt="cross" width="14px">
+                </div>
+            </div>
+        }   
+       
+        </div>
+        <button mat-raised-button color="primary" class="btn-primary-border d-flex gap-2 bold-font pos-rel">
+            <mat-icon class="rotate-icon order-2 f-18">keyboard_backspace</mat-icon> Compare 
+            <span>only in Probus</span>
+        </button>    </div>
 </div>

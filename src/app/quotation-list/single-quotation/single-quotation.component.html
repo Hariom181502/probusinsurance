@@ -302,7 +302,7 @@
     </div>
 </div>
 
-<div class="single-ticket-container mb-4">
+<div class="single-ticket-container mb-5">
     <div class="d-inline-block">
         <div class="color-card-top-section">
             <div class="d-flex align-items-center">
@@ -375,5 +375,28 @@
                 </div>
             </mat-card-content>
         </mat-card>
+    </div>
+</div>
+
+
+<div class="declined-quotes-container rounded-4 my-5">
+    <div class="declined-img-container">
+        <img src="quotation/declined.svg" alt="decline">
+    </div>
+    <div class="content-container p-4 pb-5">
+        <div class="heading-container text-center">
+            <p class="semibold-font f-16 mb-0 ms-5">We are not getting quote(s) from the following insurers.</p>
+            <p class="f-12 m-0">Might be possible reason at insurance company's end like MMV or RTO restricted or might be some technical issue.</p>
+        </div>
+         <div class="row g-4 mt-5 mx-0">
+            @for (el of specificPlanDtl; track $index) {
+            <div class="col-sm-6 col-xl-4 h-100">
+                 <div class="inner-container bg-white p-3 rounded-4 text-center">
+                     <img [src]="el.imgPath" alt="plans">
+                     <p class="f-14 m-0">{{el.planTxt}}</p>
+                    </div>
+             </div>
+            }
+         </div>
     </div>
 </div>

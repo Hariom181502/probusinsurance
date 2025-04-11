@@ -1,3 +1,6 @@
+//-----------------------
+//---------HTMl Root-----
+//-----------------------
 html{
   font-size: 62.5%;  // 62.5% of 16px = 10px 
   scroll-behavior: smooth;
@@ -13,13 +16,18 @@ html{
   }
 }
 
+//-----------------------
+//---------Body---------
+//-----------------------
 body {
   margin: 0;
   font-family: 'Inter-r';
   font-size: 1.6rem;
 }
 
-// Inter font
+//-----------------------
+//---------Inter font----
+//-----------------------
 @font-face {
   font-family: 'Inter-r';
   src: url(../src/assets/Fonts/Inter-Regular.ttf);
@@ -40,18 +48,18 @@ body {
   src: url(../src/assets/Fonts/Inter-Bold.ttf);
 }
 
-/* -----------------------
-  ---color variables---
-  ----------------------- */
+//-----------------------
+//---------Root----------
+//-----------------------
 :root {
   --primary: #0029a3;
   --secondary: #1cb9ce;
   --warn: #cc3300;
 }
 
-/* -----------------------
-  ---color style class---
-  ----------------------- */
+//-----------------------
+//---Color Style class---
+//-----------------------
 .primary {
   color: var(--primary);
 }
@@ -64,11 +72,9 @@ body {
   color: var(--warn);
 }
 
-
-/* -----------------------
-  ---Fonts Style Class---
-  ----------------------- */
-
+// ----------------------------------
+// -----------Fonts Styling---------
+// ----------------------------------
 .f-10 {
   font-size: 1rem;
 }
@@ -122,23 +128,29 @@ body {
 }
 
 // ----------------------------------
-// -----------Button Style-----------
+// -----------Button Styling---------
 // ----------------------------------
-
+.mdc-button.mdc-button--raised{
+  --mdc-protected-button-disabled-container-color: #8C8C8C;
+  --mdc-protected-button-disabled-label-text-color: #ffffff;
+}
 .btn-primary-border {
   --mdc-outlined-button-outline-color: var(--primary) !important;
 }
+
+// ----------------------------------
+// -----------Dropdown Styling-------
+// ----------------------------------
 .mat-mdc-option:hover:not(.mdc-list-item--disabled) {
   background-color: var(--primary) !important;
   color: #fff;
 }
+
+// ----------------------------------
+// -----------Checkbox Styling-------
+// ----------------------------------
 .mat-mdc-checkbox {
-  --mdc-checkbox-state-layer-size: 0
-}
-.cursor-pointer{
-  cursor: pointer;
-}
-.mat-mdc-checkbox {
+  --mdc-checkbox-state-layer-size: 0;
   .mdc-checkbox__native-control:focus+.mdc-checkbox__ripple , .mdc-checkbox:hover>.mdc-checkbox__ripple {
     background-color: transparent !important;
 }
@@ -161,7 +173,9 @@ body {
   }
 }
 
-// Form Fields
+// ----------------------------------
+// -----------Form Fields Stylimg----
+// ----------------------------------
 .mat-mdc-form-field {
   --field-border-radius: 10px;
   --field-outline-color: #CFD3D4;
@@ -194,14 +208,10 @@ body {
     display: none;
   }
 }
-.mdc-button.mdc-button--raised{
---mdc-protected-button-disabled-container-color: #8C8C8C;
---mdc-protected-button-disabled-label-text-color: #ffffff;
-}
 
-//------------------------
+//-------------------------
 //-----Layout Styling------
-//------------------------
+//-------------------------
 @mixin background-common($bg-color) {
   background-image: url(../public/common-bg.png);
   background-color: $bg-color;
@@ -210,21 +220,26 @@ body {
   position: relative;
   z-index: 0;
 }
-
 .home-bg-layout {
   @include background-common(white);
 }
-
 .other-bg-layout {
   @include background-common(#F3FAFB);
 }
-
 .quotation-bg-layout {
   background: none;
 }
 
+// ----------------------------------
+// -----------Additional Styling-----------
+// ----------------------------------
+.cursor-pointer{
+  cursor: pointer;
+}
 
-// Media Query
+// ----------------------------------
+// -----------Media Query-----------
+// ----------------------------------
 @media screen and (max-width:575px) {
   .mat-mdc-form-field {
     .mdc-text-field--outlined .mat-mdc-form-field-infix{

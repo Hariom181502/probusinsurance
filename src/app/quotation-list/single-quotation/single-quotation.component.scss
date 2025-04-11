@@ -70,6 +70,20 @@
     margin: 0px !important;
 }
 
+.declined-quotes-container{
+    background-color: #FFF4F4;
+    position: relative;
+    .declined-img-container{
+        position: absolute;
+        top: -23px;
+        left: -10px;
+    }
+    .specific-plan-container{
+        color: #595959;
+    }
+}
+
+
 @media screen and (max-width: 767px) {
     .mat-mdc-card {
         border-radius: 0px 0px 16px 16px !important;
