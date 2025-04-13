@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, Input } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { MaterialModule } from '../../shared/module/material/material.module';
 import { InnerHeaderComponent } from '../../layout/inner-header/inner-header.component';
 
@@ -9,11 +9,11 @@ import { InnerHeaderComponent } from '../../layout/inner-header/inner-header.com
   templateUrl: './kyc-step-one.component.html',
   styleUrl: './kyc-step-one.component.scss'
 })
-export class KycStepOneComponent {
+export class KycStepOneComponent implements OnInit {
 
   @Input() logoTitle: any = 'KYC';
 
-  isMobile = false;
+  isMobile = true;
   showMobileExtras = true;
   arrowVisible = false;
 
