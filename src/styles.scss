@@ -16,6 +16,7 @@ html{
   }
 }
 
+
 //-----------------------
 //---------Body---------
 //-----------------------
@@ -226,7 +227,7 @@ body {
 .other-bg-layout {
   @include background-common(#F3FAFB);
 }
-.quotation-bg-layout {
+.plain-bg-layout {
   background: none;
 }
 

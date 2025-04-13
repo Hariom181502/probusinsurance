@@ -22,9 +22,11 @@ export class AppComponent {
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
         const url = event.urlAfterRedirects;
-
-        if (url.includes('quotation')) {
-          this.layoutClass = 'quotation-bg-layout';
+        
+          const plainLayoutRoutes = ['quotation', 'KycDetailStep-1', 'KycDetailStep-2'];
+  
+        if (plainLayoutRoutes.some(route => url.includes(route))) {
+          this.layoutClass = 'plain-bg-layout';
         } else if (url === '/' || url.includes('home')) {
           this.layoutClass = 'home-bg-layout';
         } else {
@@ -32,5 +34,6 @@ export class AppComponent {
         }
       });
   }
+  
 
 }
