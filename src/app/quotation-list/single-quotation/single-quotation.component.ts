@@ -3,6 +3,7 @@ import { MaterialModule } from '../../shared/module/material/material.module';
 import { specificPlanDtl } from './jsonData';
 import { MatDialog } from '@angular/material/dialog';
 import { CashlessGaragesComponent } from '../dialogs/cashless-garages/cashless-garages.component';
+import { PremiumBreakupComponent } from '../dialogs/premium-breakup/premium-breakup.component';
 
 @Component({
   selector: 'app-single-quotation',
@@ -27,7 +28,19 @@ export class SingleQuotationComponent implements OnInit{
 
   cashlessGarages(){
     this._dialog.open(CashlessGaragesComponent,{
-      panelClass:'small-dialog',
+      panelClass:['cashless-garages-modal-container'],
+      width:'600px',
+      autoFocus:true,
+      data:{
+        title : this.id
+      }
+    });
+  };
+
+  premiumBreakup(){
+    this._dialog.open(PremiumBreakupComponent,{
+      panelClass:['premium-breakup-modal-container'],
+      width:'600px',
       autoFocus:true,
       data:{
         title : this.id

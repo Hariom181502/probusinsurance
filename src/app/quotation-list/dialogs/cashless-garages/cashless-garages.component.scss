@@ -1,0 +1,42 @@
+::ng-deep .cashless-garages-modal-container {
+   .mat-mdc-dialog-surface {
+      --mdc-dialog-container-shape: 15px;
+   }
+
+   .heading-container {
+      background-color: #06B6CB;
+      color: #F8FAFA;
+      padding: 1.3rem 1.5rem 1.2rem 1.5rem;
+   }
+
+   ::ng-deep .mat-mdc-form-field {
+         --field-border-radius: 7px;
+      .mat-mdc-form-field-infix {
+         padding-top: 7px;
+         padding-bottom: 7px;
+         min-height: 0;
+      }
+
+      .mat-mdc-select-arrow-wrapper {
+         display: none;
+      }
+   }
+
+   .agency-details{
+      border: 1.5px dashed #CACACA;
+      .title-style{
+         color: #000000;
+      }
+      .address-text-style{
+         color: #808080;
+      }
+   }
+}
+
+@media screen and (max-width:575px) {
+   ::ng-deep .cashless-garages-modal-container {
+      .heading-container {
+         padding: 1.3rem 1.5rem .7rem 1.5rem;
+      }
+   }
+}

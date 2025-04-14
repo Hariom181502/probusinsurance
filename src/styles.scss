@@ -278,7 +278,10 @@ body {
 .cursor-pointer{
   cursor: pointer;
 }
-
+.inner-scroll{
+  max-height: 70vh;
+  overflow: auto;
+}
 // ----------------------------------
 // -----------Media Query-----------
 // ----------------------------------
