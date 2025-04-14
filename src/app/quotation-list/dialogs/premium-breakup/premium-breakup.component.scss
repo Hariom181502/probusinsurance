@@ -1,3 +1,29 @@
 ::ng-deep .premium-breakup-modal-container{
-    
+   --commonText-color:#1A1A1A;
+    .mat-mdc-dialog-surface {
+        --mdc-dialog-container-shape: 15px;
+     }
+   .common-text-style{
+    color: var(--commonText-color);
+   }
+   .vehicle-basic-details-container{
+    border: 1.5px dashed rgba(0, 0, 0,.4);
+    border-bottom: none;
+    border-radius: 1rem 1rem 0 0;
+    padding: 1.5rem 1.5rem 0 1.5rem;
+    .basic-dtl-text-color{
+      color: #969696;
+    }
+   }
+   .common-content-container{
+    border-bottom: 1.6px dashed rgba(150, 150, 150,.2);
+   }
+   .total-premium-content-container{
+    border-bottom: 1.6px solid rgba(150, 150, 150,.2);
+   }
+   .net-premium-container{
+    background-color: #06B6CB;
+    border-radius: 1rem 0 0 1rem;
+   }
+
 }

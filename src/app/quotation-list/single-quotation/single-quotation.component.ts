@@ -39,8 +39,8 @@ export class SingleQuotationComponent implements OnInit{
 
   premiumBreakup(){
     this._dialog.open(PremiumBreakupComponent,{
-      panelClass:['premium-breakup-modal-container'],
-      width:'600px',
+      panelClass:['premium-breakup-modal-container','small-dialog'],
+      // width:'600px',
       autoFocus:true,
       data:{
         title : this.id

@@ -11,7 +11,7 @@ import { vehicleDtl } from './jsonData';
 export class PremiumBreakupComponent implements OnInit{
 
   id: any;
-  agencyDtl:any;
+  vehicleDtl:any;
 
   constructor 
   (
@@ -28,7 +28,11 @@ export class PremiumBreakupComponent implements OnInit{
   }
   
   setValues(){
-    this.agencyDtl = vehicleDtl;
+    this.vehicleDtl = vehicleDtl;
   }
-
+  
+  closeDialog(){
+    this.dialogRef.close()
+  }
+  
 }

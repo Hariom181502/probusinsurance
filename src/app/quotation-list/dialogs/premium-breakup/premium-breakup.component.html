@@ -1,19 +1,111 @@
 <div class="premium-modal-container">
 
-    <div class="heading-container">
-        <div class="first-row d-flex justify-content-between align-items-center gap-2">
-            <img src="dialogs/logo.svg" alt="logo">
-            <p class="f-18 medium-font m-0 d-none d-sm-inline">Cashless Garages For Reliance</p>
-            <img src="dialogs/cross.svg" alt="close">
+    <div class="heading-container d-flex justify-content-between align-items-center gap-2 p-4 pb-3 pb-sm-4">
+        <div class="first-col d-flex align-items-center gap-3">
+            <img src="sbi-general.png" alt="logo">
+            <p class="f-18 m-0 common-text-style d-none d-sm-inline-flex">Premium Breakup</p>
         </div>
-        <div class="second-row d-block d-sm-none mt-1">
-            <p class="f-18 medium-font m-0">Cashless Garages For Reliance</p>
+        <div class="second-col d-flex align-items-center gap-4">
+            <div class="d-flex align-items-center gap-2">
+                <p class="f-12 common-text-style m-0">Email Quote</p>
+            <img src="dialogs/premium-breakup/email.svg" alt="email">
+            </div>
+            <img src="dialogs/premium-breakup/cross.svg" alt="close" class="cursor-pointer" width="14px" (click)="closeDialog()">
         </div>
     </div>
 
-    <div class="modal-content-container inner-scroll p-4">
+      <div class="vehicle-quotation-container d-block d-sm-flex justify-content-between align-items-center gap-2 p-4 pt-0">
+        <p class="f-18 m-0 common-text-style d-block d-sm-none">Premium Breakup</p>
+        <p class="f-12 semibold-font common-text-style m-0">Bajaj Platina STD (100 CC) - Pertol</p>
+        <p class="f-12 common-text-style m-0">Quotation No : PIBNTWAM19564832496</p>
+      </div>
+
+    <div class="modal-content-container inner-scroll mt-1">
        
-       
+        <div class="vehicle-details-container mb-3">
+            <div class="row g-4 mx-0">
+                <div class="col-md-4 col-xxl-3 ps-4">
+                    <div class="vehicle-basic-details-container h-100">
+                        @for (el of vehicleDtl; track el; let i = $index) {
+                        <div class="content-container d-flex justify-content-between align-items-center gap-2 mb-3">
+                            <p class="m-0 basic-dtl-text-color">{{el.title}}</p>
+                            <p class="m-0 medium-font primary">{{el.titleVal}}</p>
+                        </div>
+                    }
+                    </div>
+                </div>
+                <div class="col-md-8 col-xxl-9 pe-0">
+                    <div class="vehicle-premium-details-container h-100">
+                        <div class="inner-content-container d-flex flex-column gap-3 pe-4 mb-4">
+                            <div class="common-content-container pb-3">
+                                <div class="d-flex justify-content-between align-items-center gap-2">
+                                    <p class="basic-dtl-text-color m-0">Basic OD Premium</p>
+                                    <p class="basic-dtl-text-color medium-font m-0">2009</p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center gap-2">
+                                    <p class="primary m-0">(A) Total OD Premium</p>
+                                    <p class="medium-font primary m-0">RJ-14 Jaipur</p>
+                                </div>
+                            </div>  
+                            <div class="common-content-container pb-3">
+                                <div class="d-flex justify-content-between align-items-center gap-2">
+                                    <p class="basic-dtl-text-color m-0">NCB (0 %)</p>
+                                    <p class="basic-dtl-text-color medium-font m-0">₹ 0</p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center gap-2">
+                                    <p class="primary m-0">(B) Total Discount</p>
+                                    <p class="medium-font primary m-0">₹ 0</p>
+                                </div>
+                            </div> 
+                            <div class="common-content-container pb-3">
+                                <div class="d-flex justify-content-between align-items-center gap-2">
+                                    <p class="basic-dtl-text-color m-0">Basic Third Party Liability</p>
+                                    <p class="basic-dtl-text-color medium-font m-0">₹ 700</p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center gap-2">
+                                    <p class="basic-dtl-text-color m-0">PA Cover To Owned Driver</p>
+                                    <p class="basic-dtl-text-color medium-font m-0">₹ 3,44</p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center gap-2">
+                                    <p class="primary m-0">(C) Total TP Premium</p>
+                                    <p class="medium-font primary m-0">₹ 1,044</p>
+                                </div>
+                            </div>
+                            <div class="total-premium-content-container pb-3">
+                                <div class="d-flex justify-content-between align-items-center gap-2">
+                                    <p class="primary m-0">(D) Total TP Premium</p>
+                                    <p class="medium-font primary m-0">Petrol C</p>
+                                </div>
+                            </div>
+                        </div>  
+                        
+                        <div class="net-premium-container p-4">
+                            <div class="content-container d-flex justify-content-between flex-wrap gap-4 text-white">
+                                <div>
+                                    <p class="f-12 m-0">Net Premium (A-B) + C + D</p>
+                                    <p class="f-12 m-0 bold-font">₹1,044.00</p>
+                                </div>
+                                <div>
+                                    <p class="f-28 m-0">+</p>
+                                </div>
+                                <div>
+                                    <p class="f-12 m-0">GST 18%</p>
+                                    <p class="f-12 m-0 bold-font">₹187. 00</p>
+                                </div>
+                                <div>
+                                    <p class="f-28 m-0">=</p>
+                                </div>
+                                <div>
+                                    <p class="f-12 m-0">Final Premium Payable</p>
+                                    <p class="f-12 m-0 bold-font">₹1,231.00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 </div>

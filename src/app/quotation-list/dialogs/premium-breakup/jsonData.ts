@@ -1,22 +1,12 @@
-export const vehicleDtl:any=[
-    {
-        title:'SAI & Sanghi Auto Agencies Pvt. Ltd.',
-        address:"Plot 54, Mahakail Cave Road, Sal Niketan, Milans Company's Compound, Off Gate No. 5 Tikajar Nagar, Marol",
-        contNum:'9820376531'
-    },
-    {
-        title:'SAI & Sanghi Auto Agencies Pvt. Ltd.',
-        address:"Plot 54, Mahakail Cave Road, Sal Niketan, Milans Company's Compound, Off Gate No. 5 Tikajar Nagar, Marol",
-        contNum:'9820376531'
-    },
-    {
-        title:'SAI & Sanghi Auto Agencies Pvt. Ltd.',
-        address:"Plot 54, Mahakail Cave Road, Sal Niketan, Milans Company's Compound, Off Gate No. 5 Tikajar Nagar, Marol",
-        contNum:'9820376531'
-    },
-    {
-        title:'SAI & Sanghi Auto Agencies Pvt. Ltd.',
-        address:"Plot 54, Mahakail Cave Road, Sal Niketan, Milans Company's Compound, Off Gate No. 5 Tikajar Nagar, Marol",
-        contNum:'9820376531'
-    },
+export const vehicleDtl: any = [
+    {title: 'Register Year',titleVal: '2009'},
+    {title: 'RTO',titleVal: 'RJ-14 Jaipur'},
+    {title: 'IDV',titleVal: '₹ 0'},
+    {title: 'Ex Showroom',titleVal: '₹ 0'},
+    {title: 'Min. IDV',titleVal: '₹ 0'},
+    {title: 'Max. IDV',titleVal: '₹ 0'},
+    {title: 'Vehicle Age',titleVal: '₹ 0'},
+    {title: 'Fuel Type',titleVal: 'Petrol C'},
+    {title: 'Cubic Capacity',titleVal: '100'},
+    {title: 'Seating Capacity',titleVal: '2'},
 ]
