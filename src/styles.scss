@@ -231,6 +231,47 @@ body {
   background: none;
 }
 
+//--------------------------------------------
+//----------Mat Dialog Styling-------------------
+//---------------------------------------------
+.small-dialog {
+  width: 40%;
+}
+
+.medium-dialog {
+  width: 55%;
+}
+
+.large-dialog {
+  width: 70%;
+}
+@media screen and (min-width:991px) and (max-width:1400px) {
+
+  .small-dialog,
+  .medium-dialog,
+  .large-dialog {
+    width: 60%;
+  }
+}
+@media screen and (max-width:991px) {
+
+  .small-dialog,
+  .medium-dialog,
+  .large-dialog {
+    width: 100%;
+  }
+
+  .w-md-100 {
+    width: 100% !important;
+  }
+}
+
+@media screen and (min-width:991px) {
+  .w-lg-50 {
+    width: 50% !important;
+  }
+}
+
 // ----------------------------------
 // -----------Additional Styling-----------
 // ----------------------------------
