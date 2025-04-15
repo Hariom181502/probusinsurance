@@ -4,6 +4,7 @@ import { specificPlanDtl } from './jsonData';
 import { MatDialog } from '@angular/material/dialog';
 import { CashlessGaragesComponent } from '../dialogs/cashless-garages/cashless-garages.component';
 import { PremiumBreakupComponent } from '../dialogs/premium-breakup/premium-breakup.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-single-quotation',
@@ -16,7 +17,7 @@ export class SingleQuotationComponent implements OnInit{
   specificPlanDtl:any;
   id: any;
   
-  constructor(private _dialog:MatDialog){}
+  constructor(private _dialog:MatDialog,private _router:Router){}
   
   ngOnInit(): void {
     this.setValues();
@@ -40,11 +41,14 @@ export class SingleQuotationComponent implements OnInit{
   premiumBreakup(){
     this._dialog.open(PremiumBreakupComponent,{
       panelClass:['premium-breakup-modal-container','small-dialog'],
-      // width:'600px',
       autoFocus:true,
       data:{
         title : this.id
       }
     });
+  };
+
+  kycProcess(){
+    this._router.navigate(['/KycDetailStep-1'])
   }
 }
