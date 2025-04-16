@@ -24,15 +24,21 @@
         margin-top: 0rem;
     }
 
+.form-card-container{
+    position: relative;
+    .common-label-container{
+    position: absolute;
+    right: -1px;
+    top: -45px;
+    background-color: var(--primary);
+    border-radius: 18px;
+    padding: 9px 28px 50px 55px;
+    }
+}
+
 .custom-card-outline{
     border: 1px solid #0029a329;
     border-radius: 10px;
-    &.vehicle-dtl-card::before {
-        @include card-title-style("Vehicle Details", "left");
-    }
-    &.why-choose-card::before {
-        @include card-title-style("Why Choose Probus?", "right");
-    }
 }
 .why-choose-probus-content-container {
     color: #5B5B5B;
