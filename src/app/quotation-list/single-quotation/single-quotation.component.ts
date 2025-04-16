@@ -29,8 +29,7 @@ export class SingleQuotationComponent implements OnInit{
 
   cashlessGarages(){
     this._dialog.open(CashlessGaragesComponent,{
-      panelClass:['cashless-garages-modal-container'],
-      width:'600px',
+      panelClass:['cashless-garages-modal-container','small-dialog'],
       autoFocus:true,
       data:{
         title : this.id
@@ -40,7 +39,7 @@ export class SingleQuotationComponent implements OnInit{
 
   premiumBreakup(){
     this._dialog.open(PremiumBreakupComponent,{
-      panelClass:['premium-breakup-modal-container','small-dialog'],
+      panelClass:['premium-breakup-modal-container','medium-dialog'],
       autoFocus:true,
       data:{
         title : this.id
