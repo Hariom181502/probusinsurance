@@ -1,0 +1,18 @@
+@mixin common-label-style($position, $top) {
+    position: absolute;
+    top: $top;
+    z-index: -1;
+    background-color: var(--primary);
+    color: white;
+    font-family: "Inter-sb";
+    font-size: 2rem;
+    border-radius: 18px;
+    @if $position == "right" {
+      right: -1px;
+      padding: 9px 28px 50px 55px;
+    } @else if $position == "left" {
+      left: -1px;
+      padding: 9px 55px 50px 28px;
+    }
+  }
+  
