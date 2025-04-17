@@ -13,6 +13,11 @@
         justify-content: space-between;
     }
 
+    .offcanvas-body{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
     .mobile-header-menu-list {
         display: flex;
         flex-direction: column;
