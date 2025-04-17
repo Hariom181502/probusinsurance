@@ -1,24 +1,19 @@
-@mixin card-title-style($content, $position) {
-    content: $content;
-    position: absolute;
-    top: -48px;
-    z-index: -1;
-    background-color: var(--primary);
-    color: white;
-    font-family: "Inter-sb";
-    font-size: 2rem;
-    border-radius: 18px;
-    padding: 9px 55px 50px 28px;
-    @if $position =="right" {
-        right: -1px;
-        padding: 9px 28px 50px 55px;
-    }
-    @else {
-        left: -1px;
-    }
+@use '../../mixins.scss' as *;
+
+@mixin additional-label-style($position){
+    position: relative;
+        .common-label-container{
+           @include common-label-style($position, -48px); 
+        } 
 }
 
 ::ng-deep .additional-information-container {
+    .additional-info-left-section-container{
+       @include additional-label-style('left');
+    }
+    .additional-info-right-section-container{
+        @include additional-label-style('right');
+    }
     .height-100 {
         min-height: calc(100vh - 61px);
         padding-top: 8rem;
@@ -28,12 +23,6 @@
         position: relative;
         border-radius: 10px;
         border-color: #0000000d;
-        &.policy-dtl-card::before {
-            @include card-title-style("Additional Information", "left");
-        }
-        &.why-choose-card::before {
-            @include card-title-style("Why Choose Probus?", "right");
-        }
     }
     .why-choose-probus-content-container {
         color: #5B5B5B;

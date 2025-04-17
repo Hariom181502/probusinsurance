@@ -1,42 +1,47 @@
 @use '../../mixins.scss' as *;
-
-    .height-100 {
-        min-height: calc(100vh - 55px);
-        padding-top: 8rem;
-        margin-top: 0rem;
-    }
-
-.form-card-container{
+@mixin home-label-style($position){
     position: relative;
-    .common-label-container{
-    @include common-label-style("right",-45px)
-    }
+        .common-label-container{
+           @include common-label-style($position, -45px); 
+        } 
 }
 
-.custom-card-outline{
+.height-100 {
+    min-height: calc(100vh - 55px);
+    padding-top: 8rem;
+    margin-top: 0rem;
+}
+
+.form-card-container {
+   @include home-label-style('right');
+}
+
+.custom-card-outline {
     border: 1px solid #0029a329;
     border-radius: 10px;
 }
+
 .why-choose-probus-content-container {
     color: #5B5B5B;
 }
-.green-color{
+
+.green-color {
     color: #60D669;
 }
 
-::ng-deep .compare-quotes{
-    .mat-mdc-raised-button{
+::ng-deep .compare-quotes {
+    .mat-mdc-raised-button {
         padding: 24px 36px;
         border-radius: 7px;
     }
 
-    .mdc-button__label{
+    .mdc-button__label {
         font-size: 1.6rem !important;
         font-family: 'inter-sb';
     }
 }
 
-::ng-deep .rotate-icon{
+::ng-deep .rotate-icon {
     rotate: 180deg;
     height: auto !important;
     width: auto !important;
@@ -44,37 +49,38 @@
     padding-top: 2px;
 }
 
-.bike-insurance-image-container{
-  max-width: 320px;
+.bike-insurance-image-container {
+    max-width: 320px;
 }
 
 @media screen and (max-width: 991px) {
-        .height-100 {
-            min-height: calc(100vh - 49px);
-        }
-}
-@media screen and (max-width: 767px) {
-        .height-100 {
-            min-height: calc(100vh - 58px);
-            padding-top: 0rem;
-            margin-top: 1rem;
-        }
-}
-
-@media screen and (max-width: 575px){
-    .bike-insurance-image-container{
-        max-width: 240px;
-      }
-}
-
-@media screen and (max-width: 410px){
-    .call-whatsapp-container{
-       .call-chat-text{
-        font-size: 1.1rem;
-       } 
-       .ph-number{
-        font-size: 1.2rem;
-       }
+    .height-100 {
+        min-height: calc(100vh - 49px);
     }
 }
 
+@media screen and (max-width: 767px) {
+    .height-100 {
+        min-height: calc(100vh - 58px);
+        padding-top: 0rem;
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .bike-insurance-image-container {
+        max-width: 240px;
+    }
+}
+
+@media screen and (max-width: 410px) {
+    .call-whatsapp-container {
+        .call-chat-text {
+            font-size: 1.1rem;
+        }
+
+        .ph-number {
+            font-size: 1.2rem;
+        }
+    }
+}

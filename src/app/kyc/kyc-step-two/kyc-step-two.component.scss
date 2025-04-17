@@ -1,24 +1,21 @@
-@mixin card-title-style($content, $position) {
-    content: "#{$content}";
-    position: absolute;
-    top: -37px;
-    z-index: -1;
-    background-color: var(--primary);
-    color: white;
-    font-family: "Inter-sb";
-    font-size: 1.6rem;
-    border-radius: 18px;
-    padding: 9px 35px 39px 20px;
-    left: -1px;
-    @if $position =="right" {
-        right: -1px;
-    }
-    @else {
-        left: -1px;
-    }
+@use '../../../mixins.scss' as *;
+
+@mixin kyc-label-style{
+    position: relative;
+    .common-label-container{
+        @include common-label-style('left', -37px); 
+        padding: 9px 35px 39px 20px;
+        font-size: 1.6rem;
+      }  
 }
 
 .kyc-details-details-container {
+    .kyc-left-section-container{
+        @include kyc-label-style;
+    }
+    .kyc-left-section-container{
+        @include kyc-label-style;
+    }
     background-color: #F3FAFB;
     min-height: calc(100vh - 68px);
     position: relative;
@@ -77,12 +74,6 @@
         border-radius: 10px;
         border-color: #0000000d;
         margin-top: 6rem;
-        &.ekyc-dtl-card::before {
-            @include card-title-style("EKYC Details", "left");
-        }
-        &.upload-docs-card::before {
-            @include card-title-style("Right Way to upload your document", "left");
-        }
     }
     .common-docs-style {
         border: 1.5px dashed #CACACA;
