@@ -23,7 +23,7 @@ export class AppComponent {
       .subscribe((event: NavigationEnd) => {
         const url = event.urlAfterRedirects;
         
-          const plainLayoutRoutes = ['quotation', 'KycDetailStep-1', 'KycDetailStep-2'];
+          const plainLayoutRoutes = ['quotation', 'KycDetailStep-1', 'KycDetailStep-2','personalDetails','proposalVehicleDetails','proposalTermsConditions','proposalPreviewInformation'];
   
         if (plainLayoutRoutes.some(route => url.includes(route))) {
           this.layoutClass = 'plain-bg-layout';

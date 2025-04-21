@@ -1,0 +1,281 @@
+<app-inner-header [title]="logoTitle"></app-inner-header>
+
+<div class="proposal-details-container pb-5">
+    <div class="container pt-1">
+
+        <div class="row mt-2 gx-5 gy-4">
+
+            <div class="col-md-4">
+                    <mat-card class="expand-card-container rounded-4">
+                        <div class="content-container d-flex flex-column justify-content-between">
+                            <div class="inner-content-container p-4">
+                                <div class="img-container d-flex justify-content-between align-items-center mb-4">
+                                    <div class="img-container">
+                                        <img src="sbi-general.png" alt="sbi-general">
+                                        <p *ngIf="isMobile && !arrowVisible" class="semibold-font primary m-0 mt-2">Total Premium ₹1842</p>
+                                    </div>
+                                    <button mat-raised-button color="primary" class="d-inline-flex d-sm-none">
+                                        <img src="kyc/raise-query.svg" alt="query" />
+                                        <span class="semibold-font ms-3">Raise query</span>
+                                    </button>
+                                </div>
+                                <div *ngIf="!isMobile || (isMobile && showMobileExtras)"
+                                    class="vehicle-details-container d-flex flex-column gap-3">
+                                    <div class="vehicle-number custom-bt-border pb-3">
+                                        <p class="f-12 medium-font primary m-0">Honda Activa 3G STD (58 CC )</p>
+                                        <p class="f-12 medium-font primary m-0">Petrol Two Wheeler RJ14 Jaipur</p>
+                                    </div>
+                                    <div class="qutation-number common-color custom-bt-border f-12 opacity-50 pb-3">
+                                        <p class="m-0">Quotation Number</p>
+                                        <p class="semibold-font m-0">PIBLMTRTW2025022012540788123</p>
+                                    </div>
+                                    <div class="policy-date common-color custom-bt-border f-12 opacity-50 pb-3">
+                                        <p class="m-0">Policy Start Date: <span class="semibold-font">01-Apr-2003</span></p>
+                                        <p class="m-0">Policy End Date: <span class="semibold-font">31-Mar-2026</span></p>
+                                    </div>
+                                    <div class="net-premium common-color custom-bt-border pb-3">
+                                        <div
+                                            class="d-flex justify-content-between align-items-center f-12 opacity-50 gap-1">
+                                            <p class="m-0">Net Premium</p>
+                                            <p class="bold-font m-0">₹ 1524</p>
+                                        </div>
+                                        <div
+                                            class="d-flex justify-content-between align-items-center f-12 opacity-50 gap-1">
+                                            <p class="m-0">GST</p>
+                                            <p class="bold-font m-0">₹ 285</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="total-premium d-flex justify-content-between align-items-center custom-bt-border f-16 primary pb-4">
+                                        <p class="m-0 semibold-font">Total Premium</p>
+                                        <p class="m-0 bold-font">₹ 1871</p>
+                                    </div>
+                                    <div class="plan-type common-color f-12 opacity-50">
+                                        <div class="d-flex justify-content-between align-items-center gap-1">
+                                            <p class="m-0">IDV</p>
+                                            <p class="medium-font m-0">₹ 0</p>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center gap-1">
+                                            <p class="m-0">NCB</p>
+                                            <p class="medium-font m-0">0%</p>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center gap-1">
+                                            <p class="m-0">Plan Type</p>
+                                            <p class="medium-font m-0 text-end">Two Wheeler Liability Policy</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="!isMobile || (isMobile && showMobileExtras)"
+                                class="bottom-img-container align-self-end">
+                                <img src="kyc/hand-motion-financial.svg" alt="financial" class="img-fluid">
+                            </div>
+                        </div>
+    
+                        <!-- Expand More Button -->
+                        <div *ngIf="isMobile && !arrowVisible"
+                            class="expand-more-container d-flex align-items-start gap-1 mt-3"
+                            [matTooltip]="'Expand to see more'" (click)="toggleInfo('expand')">
+                            <img src="quotation/see-more.svg" alt="Expand" width="24px" />
+                            <div class="tootltip-container expand-more d-flex align-items-end gap-1">
+                                <img src="quotation/expand-tooltip.svg" alt="tooltip">
+                                <p class="f-10 primary m-0">Expand To See More</p>
+                            </div>
+                        </div>
+    
+                        <!-- Collapse Button -->
+                        <div *ngIf="isMobile && arrowVisible"
+                            class="expand-more-container d-flex align-items-start gap-1 mt-3"
+                            [matTooltip]="'Collapse to see less'" (click)="toggleInfo('collapse')">
+                            <img src="quotation/less-more.svg" alt="Collapse" width="24px" />
+                            <div class="tootltip-container less-more d-flex align-items-end gap-1">
+                                <img src="quotation/expand-tooltip.svg" alt="tooltip">
+                                <p class="f-10 primary m-0">Collapse To See Less</p>
+                            </div>
+                        </div>
+    
+                    </mat-card>
+            </div>
+
+            <div class="col-md-8">
+
+                <mat-card class="d-none d-sm-block p-3 rounded-4">
+                    <div class="d-flex steps-conatiner flex-wrap gap-3 justify-content-between align-items-center">
+                        <div class="steps-counter">
+                            <div class="heading">
+                                <p class="m-0 medium-font f-18">Owner Details</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center gap-2">
+                                <mat-progress-bar mode="determinate" value="25"></mat-progress-bar>
+                                <p class="primary f-10 bold-font m-0">1/4</p>
+                            </div>
+                        </div>
+                        <div class="steps-buttons-container text-end">
+                            <button mat-raised-button color="primary">
+                                <img src="kyc/raise-query.svg" alt="query" />
+                                <span class="semibold-font ms-3">Raise query</span>
+                            </button>
+                        </div>
+                    </div>
+                </mat-card>
+
+                <mat-card class="custom-card-outline kyc-left-section-container p-5 pb-4 rounded-4">
+                    <div class="common-label-container">
+                        <span>Personal Details</span>
+                     </div>
+                    <div class="row gy-4 form-fields-container mb-1">
+                        <div class="col-sm-6 col-lg-4 input-container">
+                            <div class="row gy-4">
+                                <div class="col-5">
+                                    <div class="input-container">
+                                        <p class="f-12 m-0 mb-1">Salutation</p>
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <mat-select disableOptionCentering placeholder="Mr.">
+                                                <mat-option value="0">Mr.</mat-option>
+                                                <mat-option value="1">Mrs.</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                        </div>
+                                </div>
+                                <div class="col-7">
+                                    <div class="input-container">
+                                        <p class="f-12 m-0 mb-1">First Name</p>
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <input matInput placeholder="Ex:- Radhe">
+                                        </mat-form-field>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4 input-container">
+                            <p class="f-12 m-0 mb-1">Middle Name</p>
+                            <mat-form-field appearance="outline" class="w-100">
+                                <input matInput placeholder="Ex:- shyam">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-6 col-lg-4 input-container">
+                            <p class="f-12 m-0 mb-1">Last Name</p>
+                            <mat-form-field appearance="outline" class="w-100">
+                                <input matInput placeholder="Ex:- Sharma">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-6 col-lg-4 input-container">
+                            <div class="row gy-4">
+                                <div class="col-5">
+                                    <div class="dropdown-container">
+                                        <p class="f-12 m-0 mb-1">Gender</p>
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <mat-select disableOptionCentering placeholder="Male">
+                                                <mat-option value="0">Male</mat-option>
+                                                <mat-option value="1">Female</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                        </div>
+                                </div>
+                                <div class="col-7">
+                                    <div class="dropdown-container">
+                                        <p class="f-12 m-0 mb-1">Gender</p>
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <mat-select disableOptionCentering placeholder="Single">
+                                                <mat-option value="0">Single</mat-option>
+                                                <mat-option value="1">Female</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                      
+                        <div class="col-sm-6 col-lg-4 date-container">
+                            <p class="f-12 m-0 mb-1">Date of Brith</p>
+                            <mat-form-field appearance="outline" class="w-100">
+                                <input matInput [matDatepicker]="dobPicker" placeholder="MM/DD/YYYY"
+                                    (click)="dobPicker.open()">
+                                <mat-datepicker-toggle matIconSuffix [for]="dobPicker"></mat-datepicker-toggle>
+                                <mat-datepicker #dobPicker></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-6 col-lg-4 input-container">
+                            <p class="f-12 m-0 mb-1">Select Occupation</p>
+                            <mat-form-field appearance="outline" class="w-100">
+                                <input matInput placeholder="Ex:- Sharma">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-6 col-lg-4 input-container">
+                            <p class="f-12 m-0 mb-1">Address 1</p>
+                            <mat-form-field appearance="outline" class="w-100">
+                                <input matInput placeholder="Flat House No / House No">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-6 col-lg-4 input-container">
+                            <p class="f-12 m-0 mb-1">Address 2</p>
+                            <mat-form-field appearance="outline" class="w-100">
+                                <input matInput placeholder="Street Name">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-6 col-lg-4 input-container">
+                            <p class="f-12 m-0 mb-1">Address 3</p>
+                            <mat-form-field appearance="outline" class="w-100">
+                                <input matInput placeholder="Area">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-6 col-lg-4 input-container">
+                            <p class="f-12 m-0 mb-1">Pin Code</p>
+                            <mat-form-field appearance="outline" class="w-100">
+                                <input matInput placeholder="Ex:- 123456">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-6 col-lg-4 input-container">
+                            <p class="f-12 m-0 mb-1">Search State</p>
+                            <mat-form-field appearance="outline" class="w-100">
+                                <input matInput placeholder="Ex:- Rajasthan">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-6 col-lg-4 input-container">
+                            <p class="f-12 m-0 mb-1">Search City</p>
+                            <mat-form-field appearance="outline" class="w-100">
+                                <input matInput placeholder="Ex:- Jaipur">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-6 col-lg-4 input-container">
+                            <p class="f-12 m-0 mb-1">Pan Card</p>
+                            <mat-form-field appearance="outline" class="w-100">
+                                <input matInput placeholder="Ex:- AAABB123C">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-6 col-lg-4 input-container">
+                            <p class="f-12 m-0 mb-1">GSTIN</p>
+                            <mat-form-field appearance="outline" class="w-100">
+                                <input matInput placeholder="Ex:- Optional">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-6 col-lg-4 input-container">
+                            <p class="f-12 m-0 mb-1">Aadhar No.</p>
+                            <mat-form-field appearance="outline" class="w-100">
+                                <input matInput placeholder="Ex:- 1234 5678 9123">
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="confirmation-container d-flex align-items-baseline flex-wrap gap-3 gap-sm-4 my-4">
+                        <p class="f-14 m-0">Do you already have Personal Accidental (PA) Cover of Rs. 15 Lakh?</p>
+                        @for (el of personalAccidentDtl; track $index) {
+                        <div class="checkbox-container d-flex align-items-center gap-3">
+                            <mat-checkbox color="primary"></mat-checkbox>
+                            <p class="medium-font f-14 m-0 mt-2">{{el.title}}</p>
+                        </div>
+                    }
+                    </div>
+                    <div class="proceed-button-container mt-2">
+                        <button mat-raised-button color="primary" class="semibold-font" (click)="processNextStep()">Continue To Vehicle Details
+                        </button>
+                    </div>
+
+                </mat-card>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>

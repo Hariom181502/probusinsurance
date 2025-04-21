@@ -1,0 +1,112 @@
+@use '../../../mixins.scss' as *;
+
+@mixin proposal-label-style{
+    position: relative;
+    .common-label-container{
+        @include common-label-style('left', -37px); 
+        padding: .9rem 3.5rem 3.9rem 2rem;
+        font-size: 1.6rem;
+      }  
+}
+
+.proposal-details-container {
+    .kyc-left-section-container{
+        @include proposal-label-style;
+    }
+    .kyc-left-section-container{
+        @include proposal-label-style;
+    }
+    background-color: #F3FAFB;
+    min-height: calc(100vh - 68px);
+    position: relative;
+    z-index: 0;
+    .mat-mdc-card {
+        box-shadow: none;
+        outline: 1px solid rgba(0, 0, 0, .05);
+    }
+    .mat-mdc-raised-button,
+    .mat-mdc-outlined-button {
+        border-radius: 7px;
+    }
+    .mat-mdc-raised-button {
+        padding: 22px 12px;
+    }
+    .vehicle-details-container,
+    .bottom-img-container {
+        transition: all 0.3s ease;
+    }
+    .expand-card-container {
+        position: relative;
+        .expand-more-container {
+            position: absolute;
+            bottom: -12px;
+            left: 45%;
+            .tootltip-container {
+                position: relative;
+                bottom: 7px;
+            }
+        }
+    }
+    .custom-bt-border {
+        border-bottom: 1px solid rgba(0, 40, 163, .4);
+    }
+    .common-color {
+        color: #000000;
+    }
+    .steps-conatiner {
+        .mat-mdc-progress-bar {
+            --mdc-linear-progress-active-indicator-height: 6px;
+            --mdc-linear-progress-track-height: 6px;
+            --mdc-linear-progress-track-color: #CACACA;
+            border-radius: 10px !important;
+        }
+    }
+    .steps-buttons-container {
+        .mat-mdc-raised-button {
+            padding: 20px 12px;
+        }
+        .mat-mdc-outlined-button {
+            padding: 18px 7px;
+        }
+    }
+    .custom-card-outline {
+        position: relative;
+        border-radius: 10px;
+        border-color: #0000000d;
+        margin-top: 6rem;
+    }
+    ::ng-deep .mat-mdc-form-field {
+            --field-border-radius: 7px;
+        .mat-mdc-form-field-infix {
+            padding-top: 7px;
+            padding-bottom: 7px;
+            min-height: 0;
+        }
+        .mat-mdc-icon-button.mat-mdc-button-base {
+            --mdc-icon-button-state-layer-size: 30px;
+            --mdc-icon-button-icon-size: 20px;
+            padding: 0;
+        }
+        .mat-mdc-select-arrow-wrapper {
+            height: 18px;
+        }
+    }
+    .proceed-button-container .mat-mdc-raised-button {
+        padding: 18px;
+        .rotate-icon {
+            transform: rotate(180deg);
+        }
+        mat-mdc-outlined-button>.mat-icon {
+            display: inline-block;
+            font-size: 1.9rem;
+            height: 1.9rem;
+        }
+    }
+    .checkbox-container{
+        color: #4E4E4E;
+    }
+    .list-container{
+        color: #83898C;
+        font-size: 1rem;
+    }
+}
