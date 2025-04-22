@@ -39,7 +39,7 @@ export class ProposalVehicleDetailsComponent {
   }
 
   checkScreenSize() {
-    this.isMobile = window.innerWidth < 576;
+    this.isMobile = window.innerWidth < 768;
 
     if (this.isMobile) {
       this.showMobileExtras = false;

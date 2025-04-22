@@ -3,6 +3,7 @@ import { Component, HostListener, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { MaterialModule } from '../../shared/module/material/material.module';
 import { InnerHeaderComponent } from '../../layout/inner-header/inner-header.component';
+import { pDetails, vDetails } from './jsonData';
 
 @Component({
   selector: 'app-proposal-preview-information',
@@ -13,11 +14,15 @@ import { InnerHeaderComponent } from '../../layout/inner-header/inner-header.com
 export class ProposalPreviewInformationComponent {
 
   @Input() logoTitle: any = 'Proposal Detail';
+  
+  range = Array.from({ length: 6 }, (_, i) => i + 1);
 
   isMobile = true;
   showMobileExtras = true;
   arrowVisible = false;
-  personalAccidentDtl:any;
+  paymentMethodDtl:any;
+  vDetails:any;
+  pDetails:any;
 
   constructor(private _router:Router){}
   
@@ -32,14 +37,16 @@ export class ProposalPreviewInformationComponent {
   }
 
   setValues(){
-    this.personalAccidentDtl = [
-      {title:'Yes',titleVal:0},
-      {title:'No',titleVal:1},
-    ]
+    this.paymentMethodDtl = [
+      {title:'Credit/Debit Card',titleVal:0},
+      {title:'Net Banking',titleVal:1},
+    ];
+    this.vDetails = vDetails;
+    this.pDetails = pDetails;
   }
 
   checkScreenSize() {
-    this.isMobile = window.innerWidth < 576;
+    this.isMobile = window.innerWidth < 768;
 
     if (this.isMobile) {
       this.showMobileExtras = false;
