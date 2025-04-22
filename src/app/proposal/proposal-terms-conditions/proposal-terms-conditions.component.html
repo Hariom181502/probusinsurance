@@ -1,18 +1,20 @@
-<app-inner-header [title]="logoTitle"></app-inner-header>
+<div class="proposal-app-container">
+    <app-inner-header [title]="logoTitle"></app-inner-header>
 
-<div class="proposal-details-container pb-5">
-    <div class="container pt-1">
+    <div class="proposal-details-container">
+        <div class="container">
 
-        <div class="row mt-2 gx-5 gy-4">
+            <div class="row gx-5">
 
-            <div class="col-md-4">
-                    <mat-card class="expand-card-container rounded-4">
-                        <div class="content-container d-flex flex-column justify-content-between">
+                <div class="col-md-4">
+                    <mat-card class="expand-card-container rounded-4 h-100">
+                        <div class="content-container d-flex flex-column justify-content-between h-100">
                             <div class="inner-content-container p-4">
                                 <div class="img-container d-flex justify-content-between align-items-center mb-4">
                                     <div class="img-container">
                                         <img src="sbi-general.png" alt="sbi-general">
-                                        <p *ngIf="isMobile && !arrowVisible" class="semibold-font primary m-0 mt-2">Total Premium ₹1842</p>
+                                        <p *ngIf="isMobile && !arrowVisible" class="semibold-font primary m-0 mt-2">
+                                            Total Premium ₹1842</p>
                                     </div>
                                     <button mat-raised-button color="primary" class="d-inline-flex d-md-none">
                                         <img src="kyc/raise-query.svg" alt="query" />
@@ -30,8 +32,10 @@
                                         <p class="semibold-font m-0">PIBLMTRTW2025022012540788123</p>
                                     </div>
                                     <div class="policy-date common-color custom-bt-border f-12 opacity-50 pb-3">
-                                        <p class="m-0">Policy Start Date: <span class="semibold-font">01-Apr-2003</span></p>
-                                        <p class="m-0">Policy End Date: <span class="semibold-font">31-Mar-2026</span></p>
+                                        <p class="m-0">Policy Start Date: <span class="semibold-font">01-Apr-2003</span>
+                                        </p>
+                                        <p class="m-0">Policy End Date: <span class="semibold-font">31-Mar-2026</span>
+                                        </p>
                                     </div>
                                     <div class="net-premium common-color custom-bt-border pb-3">
                                         <div
@@ -71,7 +75,7 @@
                                 <img src="kyc/hand-motion-financial.svg" alt="financial" class="img-fluid">
                             </div>
                         </div>
-    
+
                         <!-- Expand More Button -->
                         <div *ngIf="isMobile && !arrowVisible"
                             class="expand-more-container d-flex align-items-start gap-1 mt-3"
@@ -82,7 +86,7 @@
                                 <p class="f-10 primary m-0">Expand To See More</p>
                             </div>
                         </div>
-    
+
                         <!-- Collapse Button -->
                         <div *ngIf="isMobile && arrowVisible"
                             class="expand-more-container d-flex align-items-start gap-1 mt-3"
@@ -93,123 +97,138 @@
                                 <p class="f-10 primary m-0">Collapse To See Less</p>
                             </div>
                         </div>
-    
+
                     </mat-card>
-            </div>
+                </div>
 
-            <div class="col-md-8">
+                <div class="col-md-8 mt-4 mt-md-0 scrollable-sidepanel">
 
-                <mat-card class="d-none d-md-block p-3 rounded-4">
-                    <div class="d-flex steps-conatiner flex-wrap gap-3 justify-content-between align-items-center">
-                        <div class="steps-counter">
-                            <div class="heading">
-                                <p class="m-0 medium-font f-18">Owner Details</p>
+                    <mat-card class="d-none d-md-block p-3 rounded-4">
+                        <div class="d-flex steps-conatiner flex-wrap gap-3 justify-content-between align-items-center">
+                            <div class="steps-counter">
+                                <div class="heading">
+                                    <p class="m-0 medium-font f-18">Owner Details</p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center gap-2">
+                                    <mat-progress-bar mode="determinate" value="75"></mat-progress-bar>
+                                    <p class="primary f-10 bold-font m-0">3/4</p>
+                                </div>
                             </div>
-                            <div class="d-flex justify-content-between align-items-center gap-2">
-                                <mat-progress-bar mode="determinate" value="75"></mat-progress-bar>
-                                <p class="primary f-10 bold-font m-0">3/4</p>
+                            <div class="steps-buttons-container text-end">
+                                <button mat-raised-button color="primary">
+                                    <img src="kyc/raise-query.svg" alt="query" />
+                                    <span class="semibold-font ms-3">Raise query</span>
+                                </button>
                             </div>
                         </div>
-                        <div class="steps-buttons-container text-end">
-                            <button mat-raised-button color="primary">
-                                <img src="kyc/raise-query.svg" alt="query" />
-                                <span class="semibold-font ms-3">Raise query</span>
-                            </button>
+                    </mat-card>
+
+                    <mat-card class="custom-card-outline kyc-left-section-container p-5 pb-4 rounded-4">
+                        <div class="common-label-container">
+                            <span>Terms & Conditions</span>
                         </div>
-                    </div>
-                </mat-card>
 
-                <mat-card class="custom-card-outline kyc-left-section-container p-5 pb-4 rounded-4">
-                    <div class="common-label-container">
-                        <span>Terms & Conditions</span>
-                     </div>
-
-                     <div class="row align-items-center gy-4 mb-4">
-                        <div class="col-sm-6 col-lg-4">
-                            <div class="row">
-                                <div class="col-7">
-                                    <div class="input-container">
-                                        <p class="f-12 m-0 mb-1">Select Relation</p>
-                                        <mat-form-field appearance="outline" class="w-100">
-                                            <input matInput placeholder="Ex:- Father">
-                                        </mat-form-field>
+                        <div class="row align-items-center gy-4 mb-4">
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <div class="input-container">
+                                            <p class="f-12 m-0 mb-1">Select Relation</p>
+                                            <mat-form-field appearance="outline" class="w-100">
+                                                <input matInput placeholder="Ex:- Father">
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="col-5">
+                                        <div class="dropdown-container">
+                                            <p class="f-12 m-0 mb-1">Gender</p>
+                                            <mat-form-field appearance="outline" class="w-100">
+                                                <mat-select disableOptionCentering placeholder="Male">
+                                                    <mat-option value="0">Male</mat-option>
+                                                    <mat-option value="1">Female</mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-5">
-                                    <div class="dropdown-container">
-                                        <p class="f-12 m-0 mb-1">Gender</p>
-                                        <mat-form-field appearance="outline" class="w-100">
-                                            <mat-select disableOptionCentering placeholder="Male">
-                                                <mat-option value="0">Male</mat-option>
-                                                <mat-option value="1">Female</mat-option>
-                                            </mat-select>
-                                        </mat-form-field>
-                                        </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4 input-container">
+                                <p class="f-12 m-0 mb-1">Nominee Full Name </p>
+                                <mat-form-field appearance="outline" class="w-100">
+                                    <input matInput placeholder="Ex:- shyam">
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-6 col-lg-4">
+                                <p class="f-12 m-0 mb-1">Date Of Brith</p>
+                                <mat-form-field appearance="outline" class="w-100">
+                                    <input matInput [matDatepicker]="dobPicker" placeholder="MM/DD/YYYY"
+                                        (click)="dobPicker.open()">
+                                    <mat-datepicker-toggle matIconSuffix [for]="dobPicker"></mat-datepicker-toggle>
+                                    <mat-datepicker #dobPicker></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="terms-conditions-container">
+                            <p class="f-14 primary medium-font m-0">I Understand that</p>
+
+                            <div class="list-container my-4">
+                                <ul>
+                                    <li>A line with IRDAI Master Guidelines on Anti-Money Laundering/Counter Financing
+                                        of Terrorism (AMT/CFT), 2022 issued vide ref. IRDAI/IID/GDL/MISC/160/8/2022
+                                        dated 1st August 2022 ("Master Guidelines") which mandated AML/CFT checks for
+                                        all lines of insurance business, Probus Partners/POSP Agent is required to take
+                                        customers information for KYC implementation for insurer.if you click i agree,
+                                        it implies you share your consent as a customer to use the information for KYC
+                                        check as per IRDAI mandate.</li>
+                                    <li>Owner name on policy document will be as per KYC verified data. Incase there is
+                                        a mismatch in the insured name and name as per RC, Insurer has the right to
+                                        reject the KVC/claims.</li>
+                                </ul>
+                            </div>
+
+                            <div class="checkbox-container d-flex flex-column gap-3">
+                                <div class="d-flex align-items-start gap-4">
+                                    <mat-checkbox color="primary"></mat-checkbox>
+                                    <p class="f-12 mt-2 mb-0">Appointment of Probus Insurance Broker Pvt. Ltd. as my
+                                        insurance broker and
+                                        authorize to represent me to inusrance companies/agencies for my insurance needs
+                                    </p>
+                                </div>
+                                <div class="d-flex align-items-start gap-4">
+                                    <mat-checkbox color="primary"></mat-checkbox>
+                                    <p class="f-12 mt-2 mb-0">I hear by agree to the Privacy Policy and Terms &
+                                        Conditions of the purchase of this policy.</p>
+                                </div>
+                                <div class="d-flex align-items-start gap-4">
+                                    <mat-checkbox color="primary"></mat-checkbox>
+                                    <p class="f-12 mt-2 mb-0">Receive Service SMS and E-mail alerts.</p>
+                                </div>
+                                <div class="d-flex align-items-start gap-4">
+                                    <mat-checkbox color="primary"></mat-checkbox>
+                                    <p class="f-12 mt-2 mb-0">Yes, I want to register my contact number for receiving
+                                        messages on Whatsapp.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-lg-4 input-container">
-                            <p class="f-12 m-0 mb-1">Nominee Full Name </p>
-                            <mat-form-field appearance="outline" class="w-100">
-                                <input matInput placeholder="Ex:- shyam">
-                            </mat-form-field>
-                        </div>
-                        <div class="col-sm-6 col-lg-4">
-                            <p class="f-12 m-0 mb-1">Date Of Brith</p>
-                    <mat-form-field appearance="outline" class="w-100">
-                        <input matInput [matDatepicker]="dobPicker" placeholder="MM/DD/YYYY"
-                            (click)="dobPicker.open()">
-                        <mat-datepicker-toggle matIconSuffix [for]="dobPicker"></mat-datepicker-toggle>
-                        <mat-datepicker #dobPicker></mat-datepicker>
-                    </mat-form-field>
-                        </div>
-                    </div>
 
-                      <div class="terms-conditions-container">
-                        <p class="f-14 primary medium-font m-0">I Understand that</p>
-
-                        <div class="list-container my-4">
-                            <ul>
-                                <li>A line with IRDAI Master Guidelines on Anti-Money Laundering/Counter Financing of Terrorism (AMT/CFT), 2022 issued vide ref. IRDAI/IID/GDL/MISC/160/8/2022 dated 1st August 2022 ("Master Guidelines") which mandated AML/CFT checks for all lines of insurance business, Probus Partners/POSP Agent is required to take customers information for KYC implementation for insurer.if you click i agree, it implies you share your consent as a customer to use the information for KYC check as per IRDAI mandate.</li>
-                                <li>Owner name on policy document will be as per KYC verified data. Incase there is a mismatch in the insured name and name as per RC, Insurer has the right to reject the KVC/claims.</li>
-                            </ul>
+                        <div class="proceed-button-container d-flex align-items-center flex-wrap gap-3 mt-5">
+                            <button mat-stroked-button color="primary" class="semibold-font">
+                                <mat-icon class="custom-arrow-icon">keyboard_backspace</mat-icon>
+                                Previous
+                            </button>
+                            <button mat-raised-button color="primary" class="semibold-font"
+                                (click)="processNextStep()">Review
+                            </button>
                         </div>
 
-                        <div class="checkbox-container d-flex flex-column gap-3">
-                            <div class="d-flex align-items-start gap-4">
-                                <mat-checkbox color="primary"></mat-checkbox>
-                                <p class="f-12 mt-2 mb-0">Appointment of Probus Insurance Broker Pvt. Ltd. as my insurance broker and
-                                    authorize to represent me to inusrance companies/agencies for my insurance needs</p>
-                            </div>
-                            <div class="d-flex align-items-start gap-4">
-                                <mat-checkbox color="primary"></mat-checkbox>
-                                <p class="f-12 mt-2 mb-0">I hear by agree to the Privacy Policy and Terms & Conditions of the purchase of this policy.</p>
-                            </div>
-                            <div class="d-flex align-items-start gap-4">
-                                <mat-checkbox color="primary"></mat-checkbox>
-                                <p class="f-12 mt-2 mb-0">Receive Service SMS and E-mail alerts.</p>
-                            </div>
-                            <div class="d-flex align-items-start gap-4">
-                                <mat-checkbox color="primary"></mat-checkbox>
-                                <p class="f-12 mt-2 mb-0">Yes, I want to register my contact number for receiving messages on Whatsapp.</p>
-                            </div>
-                        </div>
-                      </div>
+                    </mat-card>
 
-                    <div class="proceed-button-container d-flex align-items-center flex-wrap gap-3 mt-5">
-                        <button mat-stroked-button color="primary" class="semibold-font">
-                            <mat-icon class="custom-arrow-icon">keyboard_backspace</mat-icon>
-                            Previous                                            
-                        </button>
-                        <button mat-raised-button color="primary" class="semibold-font" (click)="processNextStep()">Review
-                        </button>
-                    </div>
-
-                </mat-card>
+                </div>
 
             </div>
 
         </div>
-
     </div>
+
 </div>

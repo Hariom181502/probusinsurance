@@ -1,18 +1,20 @@
-<app-inner-header [title]="logoTitle"></app-inner-header>
+<div class="proposal-app-container">
+    <app-inner-header [title]="logoTitle"></app-inner-header>
 
-<div class="proposal-details-container">
-    <div class="container pt-1">
+    <div class="proposal-details-container">
+        <div class="container">
 
-        <div class="row mt-2 gx-5 gy-4">
+            <div class="row gx-5">
 
-            <div class="col-md-4">
-                    <mat-card class="expand-card-container rounded-4">
+                <div class="col-md-4">
+                    <mat-card class="expand-card-container rounded-4 h-100">
                         <div class="content-container d-flex flex-column justify-content-between h-100">
                             <div class="inner-content-container p-4">
                                 <div class="img-container d-flex justify-content-between align-items-center mb-4">
                                     <div class="img-container">
                                         <img src="sbi-general.png" alt="sbi-general">
-                                        <p *ngIf="isMobile && !arrowVisible" class="semibold-font primary m-0 mt-2">Total Premium ₹1842</p>
+                                        <p *ngIf="isMobile && !arrowVisible" class="semibold-font primary m-0 mt-2">
+                                            Total Premium ₹1842</p>
                                     </div>
                                     <button mat-raised-button color="primary" class="d-inline-flex d-md-none">
                                         <img src="kyc/raise-query.svg" alt="query" />
@@ -30,8 +32,10 @@
                                         <p class="semibold-font m-0">PIBLMTRTW2025022012540788123</p>
                                     </div>
                                     <div class="policy-date common-color custom-bt-border f-12 opacity-50 pb-3">
-                                        <p class="m-0">Policy Start Date: <span class="semibold-font">01-Apr-2003</span></p>
-                                        <p class="m-0">Policy End Date: <span class="semibold-font">31-Mar-2026</span></p>
+                                        <p class="m-0">Policy Start Date: <span class="semibold-font">01-Apr-2003</span>
+                                        </p>
+                                        <p class="m-0">Policy End Date: <span class="semibold-font">31-Mar-2026</span>
+                                        </p>
                                     </div>
                                     <div class="net-premium common-color custom-bt-border pb-3">
                                         <div
@@ -71,7 +75,7 @@
                                 <img src="kyc/hand-motion-financial.svg" alt="financial" class="img-fluid">
                             </div>
                         </div>
-    
+
                         <!-- Expand More Button -->
                         <div *ngIf="isMobile && !arrowVisible"
                             class="expand-more-container d-flex align-items-start gap-1 mt-3"
@@ -82,7 +86,7 @@
                                 <p class="f-10 primary m-0">Expand To See More</p>
                             </div>
                         </div>
-    
+
                         <!-- Collapse Button -->
                         <div *ngIf="isMobile && arrowVisible"
                             class="expand-more-container d-flex align-items-start gap-1 mt-3"
@@ -93,118 +97,122 @@
                                 <p class="f-10 primary m-0">Collapse To See Less</p>
                             </div>
                         </div>
-    
+
                     </mat-card>
-            </div>
+                </div>
 
-            <div class="col-md-8">
+                <div class="col-md-8 mt-4 mt-md-0 scrollable-sidepanel">
 
-                <mat-card class="d-none d-md-block p-3 rounded-4">
-                    <div class="d-flex steps-conatiner flex-wrap gap-3 justify-content-between align-items-center">
-                        <div class="steps-counter">
-                            <div class="heading">
-                                <p class="m-0 medium-font f-18">Owner Details</p>
+                    <mat-card class="d-none d-md-block p-3 rounded-4">
+                        <div class="d-flex steps-conatiner flex-wrap gap-3 justify-content-between align-items-center">
+                            <div class="steps-counter">
+                                <div class="heading">
+                                    <p class="m-0 medium-font f-18">Owner Details</p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center gap-2">
+                                    <mat-progress-bar mode="determinate" value="100"></mat-progress-bar>
+                                    <p class="primary f-10 bold-font m-0">4/4</p>
+                                </div>
                             </div>
-                            <div class="d-flex justify-content-between align-items-center gap-2">
-                                <mat-progress-bar mode="determinate" value="100"></mat-progress-bar>
-                                <p class="primary f-10 bold-font m-0">4/4</p>
+                            <div class="steps-buttons-container text-end">
+                                <button mat-raised-button color="primary">
+                                    <img src="kyc/raise-query.svg" alt="query" />
+                                    <span class="semibold-font ms-3">Raise query</span>
+                                </button>
                             </div>
                         </div>
-                        <div class="steps-buttons-container text-end">
-                            <button mat-raised-button color="primary">
-                                <img src="kyc/raise-query.svg" alt="query" />
-                                <span class="semibold-font ms-3">Raise query</span>
-                            </button>
+                    </mat-card>
+
+                    <mat-card class="custom-card-outline kyc-left-section-container rounded-4">
+                        <div class="common-label-container">
+                            <span>Preview Information</span>
                         </div>
-                    </div>
-                </mat-card>
 
-                <mat-card class="custom-card-outline kyc-left-section-container rounded-4">
-                    <div class="common-label-container">
-                        <span>Preview Information</span>
-                     </div>
-
-                     <div class="row  gy-4 mb-4">
-                        <div class="col-xl-6">
-                            <div class="vehicle-details-container h-100">
-                                <div class="header-container d-flex align-items-center gap-4">
-                                    <img src="proposal-details/vehicle.svg" alt="vehicle">
-                                    <p class="medium-font f-20 m-0 title-style">Vehicle Details</p>
-                                </div>
-                                <div class="inner-content-container common-font-style d-flex flex-column gap-3 mt-4">
-                                    @for (item of vDetails; track $index) {
-                                    <div class="d-flex align-items-start gap-2">
-                                        <p class="m-0 f-14">{{item.title}}:</p>
-                                        <p class="semibold-font m-0 f-14">{{item.titleVal}}</p>
+                        <div class="row gy-4 mb-4">
+                            <div class="col-xl-6">
+                                <div class="vehicle-details-container h-100">
+                                    <div class="header-container d-flex align-items-center gap-4">
+                                        <img src="proposal-details/vehicle.svg" alt="vehicle">
+                                        <p class="medium-font f-20 m-0 title-style">Vehicle Details</p>
                                     </div>
-                                }
-                                </div>
-                            </div> 
-                        </div> 
-                        <div class="col-xl-6">
-                            <div class="premium-details-container h-100">
-                                <div class="header-container d-flex justify-content-between align-items-center gap-1">
-                                     <div class="logo d-flex align-items-center gap-4">
-                                        <img src="proposal-details/premium.svg" alt="premium">
-                                        <p class="medium-font f-20 m-0 title-style">Premium Details</p>
-                                     </div>
-                                     <button mat-raised-button color="primary">
-                                        <img src="proposal-details/edit.svg" alt="edit" />
-                                        <span class="semibold-font ms-3">Edit</span>
-                                    </button>
-                                </div>
-                                <div class="inner-content-container d-flex flex-column gap-3 mt-4">
-                                    @for (item of pDetails; track $index) {
-                                    <div class="d-flex align-items-start common-font-style gap-2">
-                                        <p class="m-0 f-14">{{item.title}}:</p>
-                                        <p class="semibold-font m-0 f-14">{{item.titleVal}}</p>
+                                    <div
+                                        class="inner-content-container common-font-style d-flex flex-column gap-3 mt-4">
+                                        @for (item of vDetails; track $index) {
+                                        <div class="d-flex align-items-start gap-2">
+                                            <p class="m-0 f-14">{{item.title}}:</p>
+                                            <p class="semibold-font m-0 f-14">{{item.titleVal}}</p>
+                                        </div>
+                                        }
                                     </div>
-                                }
-                                  <div class="checkbox-container d-flex align-items-baseline flex-wrap gap-3">
-                                        <p class="f-14 mb-0 common-font-style">Payment Method:</p>
-                                        @for (item of paymentMethodDtl; track $index) {
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="premium-details-container h-100">
+                                    <div
+                                        class="header-container d-flex justify-content-between align-items-center gap-1">
+                                        <div class="logo d-flex align-items-center gap-4">
+                                            <img src="proposal-details/premium.svg" alt="premium">
+                                            <p class="medium-font f-20 m-0 title-style">Premium Details</p>
+                                        </div>
+                                        <button mat-raised-button color="primary">
+                                            <img src="proposal-details/edit.svg" alt="edit" />
+                                            <span class="semibold-font ms-3">Edit</span>
+                                        </button>
+                                    </div>
+                                    <div class="inner-content-container d-flex flex-column gap-3 mt-4">
+                                        @for (item of pDetails; track $index) {
+                                        <div class="d-flex align-items-start common-font-style gap-2">
+                                            <p class="m-0 f-14">{{item.title}}:</p>
+                                            <p class="semibold-font m-0 f-14">{{item.titleVal}}</p>
+                                        </div>
+                                        }
+                                        <div class="checkbox-container d-flex align-items-baseline flex-wrap gap-3">
+                                            <p class="f-14 mb-0 common-font-style">Payment Method:</p>
+                                            @for (item of paymentMethodDtl; track $index) {
                                             <div class="d-flex align-items-end gap-3">
                                                 <mat-checkbox color="primary"></mat-checkbox>
-                                                 <p class="f-14 mt-1 mb-0 checkbox-title">{{item.title}}</p>
+                                                <p class="f-14 mt-1 mb-0 checkbox-title">{{item.title}}</p>
                                             </div>
-                                        }
-                                  </div>
-                                  <div class="mobile-input-container my-1">
-                                    <span class="common-font-style f-14 me-2">Mobile Number:</span>
-                                    <mat-form-field appearance="outline" class="">
-                                        <input matInput placeholder="Ex:- 6350666858">
-                                    </mat-form-field>
-                                </div>
-                                 <div class="forward-payment-container d-flex align-items-start gap-3">
-                                        <mat-checkbox color="primary"></mat-checkbox>
-                                        <p class="f-14 mt-2 mb-0 common-font-style">Forward Payment To Client?</p>
-                                 </div>
-                                 <div class="otp-container d-flex align-items-center gap-3 mt-1">
-                                    <p class="f-14 mb-0 primary medium-font">Click here to get OTP: </p>
-                                        <div class="d-flex align-items-center gap-3">
-                                            @for (i of range; track i) {
-                                            <mat-form-field appearance="outline">
-                                                <input matInput>
-                                            </mat-form-field>
-                                        }
+                                            }
                                         </div>
-                                 </div>
+                                        <div class="mobile-input-container my-1">
+                                            <span class="common-font-style f-14 me-2">Mobile Number:</span>
+                                            <mat-form-field appearance="outline" class="">
+                                                <input matInput placeholder="Ex:- 6350666858">
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="forward-payment-container d-flex align-items-start gap-3">
+                                            <mat-checkbox color="primary"></mat-checkbox>
+                                            <p class="f-14 mt-2 mb-0 common-font-style">Forward Payment To Client?</p>
+                                        </div>
+                                        <div class="otp-container d-flex align-items-center gap-3 mt-1">
+                                            <p class="f-14 mb-0 primary medium-font">Click here to get OTP: </p>
+                                            <div class="d-flex align-items-center gap-3">
+                                                @for (i of range; track i) {
+                                                <mat-form-field appearance="outline">
+                                                    <input matInput>
+                                                </mat-form-field>
+                                                }
+                                            </div>
+                                        </div>
 
+                                    </div>
                                 </div>
-                            </div> 
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="proceed-button-container mt-5">
-                        <button mat-raised-button color="primary" class="bold-font" (click)="processNextStep()">Pay Now
-                        </button>
-                    </div>
+                        <div class="proceed-button-container mt-5">
+                            <button mat-raised-button color="primary" class="bold-font" (click)="processNextStep()">Pay
+                                Now
+                            </button>
+                        </div>
 
-                </mat-card>
+                    </mat-card>
+
+                </div>
 
             </div>
 
         </div>
-
     </div>
 </div>

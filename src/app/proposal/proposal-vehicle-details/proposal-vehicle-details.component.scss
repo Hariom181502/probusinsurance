@@ -9,17 +9,23 @@
       }  
 }
 
-.proposal-details-container {
-    .kyc-left-section-container{
-        @include proposal-label-style;
-    }
-    .kyc-left-section-container{
-        @include proposal-label-style;
-    }
+.proposal-app-container{
     background-color: #F3FAFB;
-    min-height: calc(100vh - 68px);
+.proposal-details-container {
+    min-height: calc(100vh - 71px);
+    margin-top: 1rem;
     position: relative;
     z-index: 0;
+
+    .scrollable-sidepanel {
+        min-height: calc(100vh - 71px);
+    }
+    .kyc-left-section-container{
+        @include proposal-label-style;
+    }
+    .kyc-left-section-container{
+        @include proposal-label-style;
+    }
     .mat-mdc-card {
         box-shadow: none;
         outline: 1px solid rgba(0, 0, 0, .05);
@@ -105,4 +111,16 @@
     .confirmation-container{
         color: #5E6366;
     }
+}
+}
+
+@media screen and (max-width:767px) {
+    .proposal-app-container {
+        .proposal-details-container {
+            .scrollable-sidepanel {
+                height: auto;
+            }
+            height: auto; 
+        }
+    }  
 }
