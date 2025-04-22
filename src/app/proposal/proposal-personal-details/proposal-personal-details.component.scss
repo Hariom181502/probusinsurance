@@ -15,8 +15,7 @@
 
     .proposal-details-container {
         .scrollable-sidepanel {
-            height: calc(100vh - 71px);
-            overflow: auto;
+            min-height: calc(100vh - 71px);
         }
 
         .kyc-left-section-container {
@@ -27,7 +26,7 @@
             @include proposal-label-style;
         }
 
-        height: calc(100vh - 71px);
+        min-height: calc(100vh - 71px);
         margin-top: 1rem;
         position: relative;
         z-index: 0;
