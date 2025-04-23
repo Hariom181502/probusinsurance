@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { MaterialModule } from '../../shared/module/material/material.module';
 import { InnerHeaderComponent } from '../../layout/inner-header/inner-header.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-kyc-step-two',
@@ -17,6 +18,8 @@ export class KycStepTwoComponent implements OnInit {
   showMobileExtras = true;
   arrowVisible = false;
 
+  constructor(private _router:Router){}
+  
   ngOnInit(): void {
     this.checkScreenSize();
   }
@@ -47,5 +50,9 @@ export class KycStepTwoComponent implements OnInit {
       this.showMobileExtras = false;
       this.arrowVisible = false;
     }
+  }
+
+  processNextStep(){
+    this._router.navigate(['/personalDetails'])
   }
 }
