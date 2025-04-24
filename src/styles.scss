@@ -129,6 +129,16 @@ body {
 }
 
 // ----------------------------------
+// -----------Icon Styling-----------
+// ----------------------------------
+.mat-icon{
+  height: auto !important;
+  width: auto !important;
+  font-size: 2rem !important;
+}
+
+
+// ----------------------------------
 // -----------Button Styling---------
 // ----------------------------------
 .mdc-button.mdc-button--raised{
@@ -312,6 +322,7 @@ body {
   border-bottom: 8px solid white;
   border-radius: 8px;
 }
+
 // ----------------------------------
 // -----------Additional Styling-----------
 // ----------------------------------
@@ -322,6 +333,7 @@ body {
   max-height: 70vh;
   overflow: auto;
 }
+
 // ----------------------------------
 // -----------Media Query-----------
 // ----------------------------------

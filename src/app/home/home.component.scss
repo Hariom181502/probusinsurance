@@ -34,18 +34,13 @@
         padding: 24px 36px;
         border-radius: 7px;
     }
-
     .mdc-button__label {
-        font-size: 1.6rem !important;
         font-family: 'inter-sb';
     }
 }
 
 ::ng-deep .rotate-icon {
     rotate: 180deg;
-    height: auto !important;
-    width: auto !important;
-    font-size: 2rem !important;
     padding-top: 2px;
 }
 

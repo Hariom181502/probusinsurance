@@ -34,14 +34,10 @@
             border-radius: 10px;
         }
         .mdc-button__label {
-            font-size: 1.6rem !important;
             font-family: 'inter-sb';
         }
     }
     .custom-arrow-icon {
-        height: auto !important;
-        width: auto !important;
-        font-size: 2rem !important;
         &.rotate-icon {
             rotate: 180deg;
         }
