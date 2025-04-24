@@ -15,11 +15,12 @@
                             <div class="form-fields-container row gy-5  ">
                                     <div class="checkbox-container">
                                         <p class="f-12 m-0 mb-1">Required Policy Type</p>
-                                        <div class="policy-types-container d-flex align-items-center gap-5 flex-wrap">
+                                        <div class="policy-types-container d-flex align-items-center gap-4 flex-wrap">
                                             @for (el of reqPolicyDtl; track $index) {
-                                            <div class="policy-types d-flex align-items-center gap-3">
-                                                <mat-checkbox color="primary" formControlName="reqPolicy"></mat-checkbox>
-                                                <p class="medium-font f-14 m-0 mt-2">{{el.title}}</p>
+                                            <div class="policy-types">
+                                                <mat-checkbox color="primary" formControlName="reqPolicy">
+                                                    {{el.title}}
+                                                </mat-checkbox>
                                             </div>
                                         }
                                         </div> 
@@ -29,9 +30,8 @@
                                         <p class="f-12 m-0 mb-1">Do you remember previous policy details?</p>
                                         <div class="policy-types-container d-flex align-items-center gap-4 flex-wrap">
                                             @for (el of prePolicyDtl; track $index) {
-                                            <div class="policy-types d-flex align-items-center gap-3">
-                                                <mat-checkbox color="primary" formControlName="prePolicy"></mat-checkbox >
-                                                <p class="medium-font f-14 m-0 mt-2">{{el.title}}</p>
+                                            <div class="policy-types">
+                                                <mat-checkbox color="primary" formControlName="prePolicy"> {{el.title}}</mat-checkbox >
                                             </div>
                                         }
                                         </div>
@@ -40,11 +40,10 @@
                                    @if (policyDtlForm.get('prePolicy')?.valid) {
                                     <div class="checkbox-container">
                                         <p class="f-12 m-0 mb-1">Previous Expiry Status</p>
-                                        <div class="policy-types-container d-flex align-items-center gap-3 flex-wrap">
+                                        <div class="policy-types-container d-flex align-items-center gap-4 flex-wrap">
                                             @for (el of preExStatusDtl; track $index) {
-                                            <div class="policy-types d-flex align-items-center gap-3">
-                                                <mat-checkbox color="primary" formControlName="preExStatus"></mat-checkbox>
-                                                <p class="medium-font f-14 m-0 mt-2">{{el.title}}</p>
+                                            <div class="policy-types">
+                                                <mat-checkbox color="primary" formControlName="preExStatus"> {{el.title}}</mat-checkbox>
                                             </div>
                                         }
                                         </div>
@@ -61,11 +60,10 @@
                                 @if (policyDtlForm.get('policyExpire')?.valid) {
                                     <div class="checkbox-container">
                                         <p class="f-12 m-0 mb-1">Previous Policy Type</p>
-                                        <div class="policy-types-container d-flex align-items-center gap-3 flex-wrap">
+                                        <div class="policy-types-container d-flex align-items-center gap-4 flex-wrap">
                                             @for (el of prePolicyTypeDtl; track $index) {
-                                            <div class="policy-types d-flex align-items-center gap-3">
-                                                <mat-checkbox color="primary" formControlName="prePolicyType"></mat-checkbox>
-                                                <p class="medium-font f-14 m-0 mt-2">{{el.title}}</p>
+                                            <div class="policy-types">
+                                                <mat-checkbox color="primary" formControlName="prePolicyType"> {{el.title}}</mat-checkbox>
                                             </div>
                                         }
                                         </div>

@@ -169,10 +169,7 @@
                                         <div class="checkbox-container d-flex align-items-baseline flex-wrap gap-3">
                                             <p class="f-14 mb-0 common-font-style">Payment Method:</p>
                                             @for (item of paymentMethodDtl; track $index) {
-                                            <div class="d-flex align-items-end gap-3">
-                                                <mat-checkbox color="primary"></mat-checkbox>
-                                                <p class="f-14 mt-1 mb-0 checkbox-title">{{item.title}}</p>
-                                            </div>
+                                                <mat-checkbox color="primary">{{item.title}}</mat-checkbox>                                          
                                             }
                                         </div>
                                         <div class="mobile-input-container my-1">
@@ -181,9 +178,8 @@
                                                 <input matInput placeholder="Ex:- 6350666858">
                                             </mat-form-field>
                                         </div>
-                                        <div class="forward-payment-container d-flex align-items-start gap-3">
-                                            <mat-checkbox color="primary"></mat-checkbox>
-                                            <p class="f-14 mt-2 mb-0 common-font-style">Forward Payment To Client?</p>
+                                        <div class="forward-payment-container">
+                                            <mat-checkbox color="primary">Forward Payment To Client?</mat-checkbox>
                                         </div>
                                         <div class="otp-container d-flex align-items-center gap-3 mt-1">
                                             <p class="f-14 mb-0 primary medium-font">Click here to get OTP: </p>

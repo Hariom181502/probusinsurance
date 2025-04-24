@@ -128,6 +128,27 @@ body {
   font-family: 'Inter-b' !important;
 }
 
+//-------------------------
+//-----Layout Styling------
+//-------------------------
+@mixin background-common($bg-color) {
+  background-image: url(../public/common-bg.png);
+  background-color: $bg-color;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  position: relative;
+  z-index: 0;
+}
+.home-bg-layout {
+  @include background-common(white);
+}
+.other-bg-layout {
+  @include background-common(#F3FAFB);
+}
+.plain-bg-layout {
+  background: none;
+}
+
 // ----------------------------------
 // -----------Icon Styling-----------
 // ----------------------------------
@@ -136,7 +157,6 @@ body {
   width: auto !important;
   font-size: 2rem !important;
 }
-
 
 // ----------------------------------
 // -----------Button Styling---------
@@ -167,9 +187,18 @@ body {
 // ----------------------------------
 .mat-mdc-checkbox {
   --mdc-checkbox-state-layer-size: 0;
+  .mat-internal-form-field {
+    align-items: flex-start;
+}
   .mdc-checkbox__native-control:focus+.mdc-checkbox__ripple , .mdc-checkbox:hover>.mdc-checkbox__ripple {
     background-color: transparent !important;
 }
+  .mdc-label{
+    font-size: 1.4rem;
+    color: #83898C;
+    font-family: 'Inter-m';
+    margin-left: .6rem;
+  }
   .mdc-checkbox__background {
       width: 22px !important;
       height: 22px !important;
@@ -185,6 +214,25 @@ body {
           top: 3px;
           left: 3px;
           width: 66%;
+      }
+  }
+}
+
+.plain-checkbox.mat-mdc-checkbox {
+  .mdc-checkbox__background {
+      width: 22px !important;
+      height: 22px !important;
+      border-radius: 4px !important;
+  }
+  &.mat-mdc-checkbox-checked {
+      .mdc-checkbox__background {
+          outline: none !important;
+          border: none !important;
+      }
+      .mdc-checkbox__checkmark {
+          top: 4px;
+          left: 4px;
+          width: 63%;
       }
   }
 }
@@ -223,27 +271,6 @@ body {
   .mdc-line-ripple--deactivating {
     display: none;
   }
-}
-
-//-------------------------
-//-----Layout Styling------
-//-------------------------
-@mixin background-common($bg-color) {
-  background-image: url(../public/common-bg.png);
-  background-color: $bg-color;
-  background-repeat: no-repeat;
-  background-position: bottom right;
-  position: relative;
-  z-index: 0;
-}
-.home-bg-layout {
-  @include background-common(white);
-}
-.other-bg-layout {
-  @include background-common(#F3FAFB);
-}
-.plain-bg-layout {
-  background: none;
 }
 
 //--------------------------------------------

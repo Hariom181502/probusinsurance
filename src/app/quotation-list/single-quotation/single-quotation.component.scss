@@ -40,26 +40,7 @@
         font-family: 'inter-sb';
     }
 }
-::ng-deep .single-ticket-container{
-.mat-mdc-checkbox {
-    .mdc-checkbox__background {
-        width: 22px !important;
-        height: 22px !important;
-        border-radius: 4px !important;
-    }
-    &.mat-mdc-checkbox-checked {
-        .mdc-checkbox__background {
-            outline: none !important;
-            border: nonef !important;
-        }
-        .mdc-checkbox__checkmark {
-            top: 3px;
-            left: 3px;
-            width: 66%;
-        }
-    }
-  }
-}
+
 
 ::ng-deep .rotate-icon {
     rotate: 180deg;
@@ -99,6 +80,18 @@
         .mdc-button__label {
             font-size: 1.7rem !important;
             font-family: 'inter-sb';
+        }
+    }
+}
+
+@media screen and (max-width: 410px) {
+    .cash-pre-fonts{
+        font-size: 1rem;
+    }
+    .single-ticket-display{
+        display: block !important;
+        .font-reduce{
+            font-size: 1.1rem;
         }
     }
 }

@@ -56,12 +56,10 @@
                                         <div class="checkbox-container">
                                             <p class="f-12 m-0 mb-1">Customer Type</p>
                                             <div
-                                                class="policy-types-container d-flex align-items-center gap-3 flex-wrap">
+                                                class="policy-types-container d-flex align-items-center gap-4 flex-wrap">
                                                 @for (el of customerTypeDtl; track $index) {
-                                                <div class="policy-types d-flex align-items-center gap-3">
-                                                    <mat-checkbox color="primary"
-                                                        formControlName="customerType"></mat-checkbox>
-                                                    <p class="medium-font f-14 m-0 mt-2">{{el.title}}</p>
+                                                <div class="policy-types">
+                                                    <mat-checkbox color="primary" formControlName="customerType">{{el.title}}</mat-checkbox>    
                                                 </div>
                                                 }
                                             </div>
@@ -71,12 +69,11 @@
                                         <div class="checkbox-container mt-5 mb-4">
                                             <p class="f-12 m-0 mb-1">Do you have a valid driving license?</p>
                                             <div
-                                                class="policy-types-container d-flex align-items-center gap-3 flex-wrap">
+                                                class="policy-types-container d-flex align-items-center gap-4 flex-wrap">
                                                 @for (el of licenceDtl; track $index) {
-                                                <div class="policy-types d-flex align-items-center gap-3">
+                                                <div class="policy-types">
                                                     <mat-checkbox color="primary"
-                                                        formControlName="drivingLicense"></mat-checkbox>
-                                                    <p class="medium-font f-14 m-0 mt-2">{{el.title}}</p>
+                                                        formControlName="drivingLicense">{{el.title}}</mat-checkbox>
                                                 </div>
                                                 }
                                             </div>
@@ -87,12 +84,11 @@
                                             <p class="f-12 m-0 mb-1">Do you already have Personal Accidental (PA) Cover
                                                 of Rs. 15 Lakh?</p>
                                             <div
-                                                class="policy-types-container d-flex align-items-center gap-3 flex-wrap">
+                                                class="policy-types-container d-flex align-items-center gap-4 flex-wrap">
                                                 @for (el of personalAcceDtl; track $index) {
-                                                <div class="policy-types d-flex align-items-center gap-3">
+                                                <div class="policy-types">
                                                     <mat-checkbox color="primary"
-                                                        formControlName="personalAccident"></mat-checkbox>
-                                                    <p class="medium-font f-14 m-0 mt-2">{{el.title}}</p>
+                                                        formControlName="personalAccident">{{el.title}}</mat-checkbox>
                                                 </div>
                                                 }
                                             </div>
